@@ -3,7 +3,7 @@ import { useGLTF, Environment, OrbitControls } from '@react-three/drei';
 
 function Landscape() {
   // Load the model
-  const { scene } = useGLTF('/landscape.glb'); // Adjust the path if needed
+  const { scene } = useGLTF('landscape.glb'); // Adjust the path if needed
 
   // Return the 3D model with scale, position, and rotation adjustments
   return (
