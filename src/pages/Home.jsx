@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import Footer from '../components/Footer';
 import Background from '../components/Background';
+import Background2 from '../components/Background2';
 import Navigation from '../components/Navigation';
 import HorizontalScroll from '../components/HorizontalScroll';
 import ErrorBoundary from '../components/ErrorBoundary';
@@ -13,6 +14,7 @@ const HomePage = () => {
         <ErrorBoundary>
         <main className="">
           <Background />
+          {/* <Background2 /> */}
           <Header />
           <HorizontalScroll>
             {/* Hero Section */}
