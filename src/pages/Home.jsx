@@ -7,6 +7,8 @@ import HorizontalScroll from '../components/HorizontalScroll';
 import ErrorBoundary from '../components/ErrorBoundary';
 import Header from '../components/Header';
 import { motion } from 'framer-motion';
+import { IoIosArrowForward } from "react-icons/io";
+
 
 const HomePage = () => {
 
@@ -26,7 +28,7 @@ const HomePage = () => {
             >
               <div className=''>
                 <span className='flex gap-1 items-center'>
-                  <img src='/images/wow.svg' alt=""/>
+                  <img src='/images/wow.svg' alt="" />
                   <h1 className="text-9xl font-bold ">From Cool Idea</h1>
                 </span>
                 <span>
@@ -37,7 +39,7 @@ const HomePage = () => {
                   <h1 className="text-9xl font-bold ">Product</h1>
                   <p className='text-black text-xl font-rocksalt basis-1/4 px-10'>A Full-Service Design Studio Specialization In Mobile And Web Desgin, Brandings And Animation</p>
 
-                  <img className='' src='/images/arrow.svg' alt=""/>
+                  <img className='' src='/images/arrow.svg' alt="" />
                 </span>
 
               </div>
@@ -48,8 +50,8 @@ const HomePage = () => {
             </motion.div>
           </section>
 
-          {/* Projects Section */}
-          <section className="section w-screen h-screen flex items-center px-20">
+          {/* Who we are */}
+          <section className="section w-screen h-screen flex items-center justify-center  px-20">
             <div className="grid grid-cols-2 gap-20">
               <motion.div
                 initial={{ opacity: 0 }}
@@ -57,12 +59,43 @@ const HomePage = () => {
                 transition={{ duration: 1 }}
                 className="space-y-8"
               >
-                <h2 className="text-6xl font-bold">Selected Works</h2>
+                <div className='flex items-baseline gap-5'>
+
+                  <h2 className="text-8xl font-bold font-formula">Who We Are </h2>
+                  <img src='/images/hello.svg' className='w-44' />
+                </div>
+
+
                 <p className="text-xl text-gray-400">
-                  Explore our portfolio of innovative digital solutions
+                  Gapsy Studio is an innovative web and mobile app design studio based in Dnipro. We are a tribe of go-getters with outstanding experience and a reputation for building and transforming ideas into a global brand. We bring to life your vision by fusing creativity, experience, and technology. Whether you need a new website or want to upgrade your existing one, we can help turn your goals into reality. If you’re looking for an agency to help you take your business to the next level, contact us today – we will be happy to cooperate!
                 </p>
+                <div className='flex items-center gap-2'>   
+                  <button className=" text-black border-4 border-black rounded-lg  p-2 text-xl hover:bg-black hover:text-white duration-300 hover:transition-all">
+                     <IoIosArrowForward />
+                  </button>
+                      <span>About Us</span>
+                </div>
+
+                
               </motion.div>
-              <div className="grid grid-cols-2 gap-8">
+
+            </div>
+          </section>
+
+          {/* Projects Section */}
+          <section className="section w-screen h-screen flex items-center justify-center px-20">
+            <div className="grid grid-cols-1 gap-20 relative">
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+                className="space-y-8"
+              >
+                <img src='/images/wow.svg' className="absolute right-0 -top-24"/>
+                <h2 className="text-9xl font-bold text-center text-red-500">Selected Works</h2>
+               
+              </motion.div>
+              {/* <div className="grid grid-cols-2 gap-8">
                 {[1, 2, 3, 4].map((i) => (
                   <motion.div
                     key={i}
@@ -78,7 +111,7 @@ const HomePage = () => {
                     />
                   </motion.div>
                 ))}
-              </div>
+              </div> */}
             </div>
           </section>
 

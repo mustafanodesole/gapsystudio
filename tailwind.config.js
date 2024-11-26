@@ -10,7 +10,8 @@ export default {
       },
       fontFamily: {
 
-        'rockSalt': ["Rock Salt"] 
+        'rockSalt': ["Rock Salt"],
+        'formula' : ["PP Formula Condensed"] 
 
       }
     },
