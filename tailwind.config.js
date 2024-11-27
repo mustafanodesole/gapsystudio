@@ -11,7 +11,7 @@ export default {
       fontFamily: {
 
         'rockSalt': ["Rock Salt"],
-        'formula' : ["PP Formula Condensed"] 
+        'pp-formula-condensed': ['PP Formula Condensed', 'sans-serif'],
 
       }
     },

@@ -36,8 +36,8 @@ export default function HorizontalScroll({ children }: { children: React.ReactNo
     <div ref={containerRef} className="h-screen overflow-hidden">
       <div
         ref={scrollRef}
-        className="flex h-full"
-        style={{ width: `${100 * 4}vw` }}
+        className="flex  h-full"
+        style={{ width: `${100 * 7}vw` }}
       >
         {children}
       </div>
