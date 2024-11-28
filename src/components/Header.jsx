@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 import MenuModal from './MenuModal'; // Import the modal component
 import '../css/Header2.css'
+import { TiThMenu } from "react-icons/ti";
+
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
         <header style={headerStyles}>
-            <img src="images/logo.svg" alt="Gapsy Logo" style={logoStyles} />
+            <img src="/images/logo.svg" alt="Gapsy Logo" style={logoStyles} />
            
             <div style={buttonContainer}>
-                <button style={menuButton} onClick={() => setIsMenuOpen(true)}></button>
-                <button href="./contacts" style={hireButton} >Hire Us</button>
+                <button className='hire-btn' onClick={() => setIsMenuOpen(true)}> <TiThMenu className='text-xl'/> </button>
+                <button href="./contacts" className="hire-btn">Hire Us</button>
             </div>
             {isMenuOpen && <MenuModal onClose={() => setIsMenuOpen(false)} />}
         </header>
@@ -37,11 +39,11 @@ const logoStyles = {
 
 const buttonContainer = {
     display: 'flex',
-    alignItems: 'center',
     position : "fixed",
     top : 20,
     right : 20,
     zIndex : 2,
+    gap : 5,
 };
 
 const hireButton = {
@@ -69,5 +71,6 @@ const menuButton = {
     border: 'none',
     cursor: 'pointer',
 };
+
 
 export default Header;

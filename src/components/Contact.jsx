@@ -1,103 +1,112 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { ImAttachment } from "react-icons/im";
+
 
 const ContactPage = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        projectDetails: '',
-        budget: '',
-        file: null,
-    });
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    projectDetails: '',
+    budget: '',
+    file: null,
+  });
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-    };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
 
-    const handleFileChange = (e) => {
-        setFormData({ ...formData, file: e.target.files[0] });
-    };
+  const handleFileChange = (e) => {
+    setFormData({ ...formData, file: e.target.files[0] });
+  };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log('Form data submitted:', formData);
-    };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Form data submitted:', formData);
+  };
 
-    return (
-        <>
-            <Container>
-                <Header>Contacts</Header>
-                <Description>
-                    So you would like to work with one of the best teams in the world? What kind of project would you like us to craft for you?
-                </Description>
-                <ButtonGroup>
-                    <Button>UI/UX Design</Button>
-                    <Button>Brand Identity</Button>
-                    <Button>Illustrations</Button>
-                    <Button>Motion Design</Button>
-                    <Button>Web development</Button>
-                </ButtonGroup>
+  return (
+    <>
+      <Container>
+        <Header>Contacts</Header>
+        <Description className='font-pp-formula-condensed font-thin text-gray-600'>
+          So you would like to work with one of the best teams in the world? What kind of project would you like us to craft for you?
+        </Description>
+        <ButtonGroup>
+          <button className='animate-btn'>UI/UX Design</button>
 
-                <SectionTitle>
-                    You can't put a price on happiness — oh wait, yes we can! What's your budget range for this Complete Website project?
-                </SectionTitle>
-                <ButtonGroup>
-                    <Button>$1 - $1000</Button>
-                    <Button>$1000 - $5000</Button>
-                    <Button>$5000 - $10000</Button>
-                    <Button>I don't know</Button>
-                </ButtonGroup>
+          <button className="animate-btn">Brand Identity</button>
+          <button className="animate-btn">Illustrations</button>
+          <button className="animate-btn">Motion Design</button>
+          <button className="animate-btn">Web development</button>
+        </ButtonGroup>
 
-                <SectionTitle>
-                    We're mind-blowers, not mind-readers. Tell us more about your project.
-                </SectionTitle>
-                <Form onSubmit={handleSubmit}>
-                    <Row>
-                        <FieldGroup>
-                            <Label htmlFor="name">Name</Label>
-                            <Input type="text" name="name" value={formData.name} onChange={handleChange} required />
-                        </FieldGroup>
+        <SectionTitle className='font-pp-formula-condensed font-thin text-gray-600'>
+          You can't put a price on happiness — oh wait, yes we can! What's your budget range for this Complete Website project?
+        </SectionTitle>
+        <ButtonGroup>
+          <button className="animate-btn">$1 - $1000</button>
+          <button className="animate-btn">$1000 - $5000</button>
+          <button className="animate-btn">$5000 - $10000</button>
+          <button className="animate-btn">I don't know</button>
+          <button className="animate-btn">Hire Us</button>
 
-                        <FieldGroup>
-                            <Label htmlFor="email">Email</Label>
-                            <Input type="email" name="email" value={formData.email} onChange={handleChange} required />
-                        </FieldGroup>
-                    </Row>
+        </ButtonGroup>
 
-                    <FieldGroup fullWidth>
-                        <Label htmlFor="projectDetails">About Project</Label>
-                        <Textarea name="projectDetails" value={formData.projectDetails} onChange={handleChange} required />
-                    </FieldGroup>
-                    <Row>
-                        <FileInputGroup>
-                            <FileContainer>
-                                <FileLabel htmlFor="file">📎</FileLabel>
-                                <FileInput type="file" name="file" onChange={handleFileChange} />
-                            </FileContainer>
-                            <FileContainer2>
-                                <FileText>Attach file</FileText>
-                            </FileContainer2>
-                        </FileInputGroup>
+        <SectionTitle className='font-pp-formula-condensed font-thin text-gray-600'>
+          We're mind-blowers, not mind-readers. Tell us more about your project.
+        </SectionTitle>
+        <Form onSubmit={handleSubmit}>
+          <Row>
+            <FieldGroup>
+              <Label htmlFor="name">Name</Label>
+              <Input type="text" name="name" value={formData.name} onChange={handleChange} required />
+            </FieldGroup>
 
-                        <SubmitButton type="submit">Submit</SubmitButton>
-                    </Row>
-                </Form>
-            </Container>
+            <FieldGroup>
+              <Label htmlFor="email">Email</Label>
+              <Input type="email" name="email" value={formData.email} onChange={handleChange} required />
+            </FieldGroup>
+          </Row>
 
-            {/* Footer Component */}
-            <Footer>
-                <FooterText>&copy; 2024 Your Company. All rights reserved.</FooterText>
-                <FooterLink1 href="#">Privacy Policy</FooterLink1>
-                <FooterLinks>
-                    <FooterLink href="#">Facebook</FooterLink>
-                    <FooterLink href="#">Behance</FooterLink>
-                    <FooterLink href="#">Dribbble</FooterLink>
-                    <FooterLink href="#">Instagram</FooterLink>
-                </FooterLinks>
-            </Footer>
-        </>
-    );
+          <FieldGroup fullWidth>
+            <Label htmlFor="projectDetails">About Project</Label>
+            <Textarea name="projectDetails" value={formData.projectDetails} onChange={handleChange} required />
+          </FieldGroup>
+          <Row>
+            <FileInputGroup>
+              <FileContainer>
+                <FileLabel htmlFor="file">
+                <button>
+                   <ImAttachment />
+                  </button>
+                  </FileLabel>
+                <FileInput type="file" name="file" onChange={handleFileChange} />
+              </FileContainer>
+              <FileContainer2>
+                <FileText>Attach file</FileText>
+              </FileContainer2>
+            </FileInputGroup>
+
+            <SubmitButton type="submit">Submit</SubmitButton>
+          </Row>
+        </Form>
+      </Container>
+
+      {/* Footer Component */}
+      <Footer>
+        <FooterText>&copy; 2024 Your Company. All rights reserved.</FooterText>
+        <FooterLink1 href="#">Privacy Policy</FooterLink1>
+        <FooterLinks>
+          <FooterLink href="#">Facebook</FooterLink>
+          <FooterLink href="#">Behance</FooterLink>
+          <FooterLink href="#">Dribbble</FooterLink>
+          <FooterLink href="#">Instagram</FooterLink>
+        </FooterLinks>
+      </Footer>
+    </>
+  );
 };
 
 // Styled components
@@ -112,17 +121,19 @@ const Container = styled.div`
 
 
 const Header = styled.h1`
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 2rem;
+  font-weight: 500;
   margin-bottom: 20px;
-  font-family: 'Arial Black', sans-serif;
+  font-family: 'Rock Salt', sans-serif;
   text-align: center;
+
 `;
 
 const Description = styled.p`
-  font-size: 1.2rem;
+  font-size: 3rem;
   line-height: 1.5;
   margin-bottom: 30px;
+  
 `;
 
 const ButtonGroup = styled.div`
@@ -150,8 +161,7 @@ const Button = styled.button`
 `;
 
 const SectionTitle = styled.h2`
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 3rem;
   margin-bottom: 20px;
 `;
 
@@ -276,7 +286,7 @@ const Footer = styled.footer`
   color: #fff;
   gap: 20px;
   `
-;
+  ;
 
 
 const FooterText = styled.p`
@@ -336,5 +346,7 @@ const FooterLink = styled.a`
     transform: scaleY(0); // Scale to full width on hover
     transformOrigin: bottom;
 `;
+
+
 
 export default ContactPage;

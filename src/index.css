@@ -45,3 +45,133 @@ body {
 .font-rocksalt{
   font-family: "Rock Salt";
 }
+
+
+
+button.animate-btn {
+  position: relative;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 0; /* Ensure the button text is above the animation */
+  transition: color 0.3s ease; /* Smooth text color transition */
+}
+
+button.animate-btn::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: -1; /* Place the animation background behind the text */
+  transition: transform 0.3s ease; /* Smooth transition for the animation */
+  transform: translateY(0);
+}
+
+button.animate-btn:hover {
+  color: white; /* Change text color on hover */
+}
+
+button.animate-btn:hover::before {
+  transform: translateY(-100%); /* Move the animation background into view */
+}
+
+button.animate-btn:not(:hover)::before {
+  transform: translateY(100%); /* Move the animation background out of view */
+}
+
+
+
+
+button.hire-btn {
+  position: relative;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 0; /* Ensure the button text is above the animation */
+  transition: color 0.3s ease; /* Smooth text color transition */
+}
+
+button.hire-btn::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: -1; /* Place the animation background behind the text */
+  transition: transform 0.3s ease; /* Smooth transition for the animation */
+  transform: translateY(0);
+}
+
+button.hire-btn:hover {
+  color: black; /* Change text color on hover */
+}
+
+button.hire-btn:hover::before {
+  transform: translateY(-100%); /* Move the animation background into view */
+}
+
+button.hire-btn:not(:hover)::before {
+  transform: translateY(100%); /* Move the animation background out of view */
+}
+
+
+
+
+
+
+button.menu-btn {
+  position: relative;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: black;
+  min-height: 35px;
+  background-image: url("/menu.png");
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 0; /* Ensure the button text is above the animation */
+  transition: color 0.3s ease; /* Smooth text color transition */
+}
+
+button.menu-btn::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: -1; /* Place the animation background behind the text */
+  transition: transform 0.3s ease; /* Smooth transition for the animation */
+  transform: translateY(0);
+}
+
+button.menu-btn:hover {
+  color: black; /* Change text color on hover */
+  background-image: url('/menu2.png');
+}
+
+button.menu-btn:hover::before {
+  transform: translateY(-100%); /* Move the animation background into view */
+}
+
+button.menu-btn:not(:hover)::before {
+  transform: translateY(100%); /* Move the animation background out of view */
+}
