@@ -26,14 +26,22 @@ const headerStyles = {
     paddingLeft: '20px',
     paddingRight: '20px',
     background: 'transparent',
+    
 };
 
 const logoStyles = {
+    position : "fixed",
+    top : 20,
+    left : 20
 };
 
 const buttonContainer = {
     display: 'flex',
     alignItems: 'center',
+    position : "fixed",
+    top : 20,
+    right : 20,
+    zIndex : 2,
 };
 
 const hireButton = {
@@ -43,6 +51,8 @@ const hireButton = {
     color: 'white',
     border: 'none',
     cursor: 'pointer',
+    zIndex : 2,
+
 };
 
 const menuButton = {

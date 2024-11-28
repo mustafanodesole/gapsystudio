@@ -43,7 +43,7 @@ const headerStyles = {
     alignItems: 'center',
     padding: '20px',
     gap: '50px',
-    position: 'absolute',
+    position: 'fixed',
     right: 0,
     bottom: 0,
     left: 0,
