@@ -76,20 +76,20 @@ const ContactPage = () => {
           </FieldGroup>
           <Row>
             <FileInputGroup>
-              <FileContainer>
-                <FileLabel htmlFor="file">
-                <button>
+              
+                
+                  <button className='upload-btn'>
                    <ImAttachment />
                   </button>
-                  </FileLabel>
                 <FileInput type="file" name="file" onChange={handleFileChange} />
-              </FileContainer>
+              
               <FileContainer2>
                 <FileText>Attach file</FileText>
               </FileContainer2>
             </FileInputGroup>
 
-            <SubmitButton type="submit">Submit</SubmitButton>
+            {/* <SubmitButton type="submit">Submit</SubmitButton> */}
+            <button className='animate-btn ml-auto'>Submit</button>
           </Row>
         </Form>
       </Container>
@@ -210,7 +210,7 @@ const Textarea = styled.textarea`
 
 const FileInputGroup = styled.div`
   display: flex;
-  align-items: center;
+  
   gap: 10px;
   cursor: pointer;
 `;

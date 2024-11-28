@@ -8,6 +8,7 @@ import ErrorBoundary from '../components/ErrorBoundary';
 import Header from '../components/Header';
 import { motion } from 'framer-motion';
 import { IoIosArrowForward } from "react-icons/io";
+import { ImAttachment } from "react-icons/im";
 
 
 const HomePage = () => {
@@ -36,7 +37,7 @@ const HomePage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
             >
-              <div className=''>
+              <div className='text-[#fe6f61]'>
                 <span className='flex flex-nowrap gap-1 items-center'>
                   <img src='/images/wow.svg' alt="" />
                   <h1 className="text-9xl font-bold text-nowrap">From Cool Idea</h1>
@@ -85,28 +86,28 @@ const HomePage = () => {
                   <span>About Us</span>
                 </div>
               </motion.div>
-  {/* video */}
+              {/* video */}
 
               <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-              className=""
-            >
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+                className=""
+              >
 
-           
+
                 <video controls autoplay loop className=''>
                   <source src='/videos/showreel.mp4' />
                 </video>
-         
 
-            </motion.div>
+
+              </motion.div>
             </div>
           </section>
 
 
-        
-        
+
+
 
           {/* selected works*/}
           <section className="section w-screen h-screen flex items-center justify-center  text-center">
@@ -118,7 +119,7 @@ const HomePage = () => {
                 className="space-y-8"
               >
                 <img src='/images/wow.svg' className="absolute right-0 -top-24" />
-                <h2 className="text-9xl text-nowrap  font-bold  text-red-500">Selected Works</h2>
+                <h2 className="text-9xl text-nowrap  font-bold  text-[#fe6f61]">Selected Works</h2>
 
               </motion.div>
 
@@ -151,7 +152,7 @@ const HomePage = () => {
                   </div>
                 </div>
               </motion.div>
-              </div>
+            </div>
           </section>
 
           <section className="section w-screen  h-screen flex items-center justify-center px-20">
@@ -178,7 +179,7 @@ const HomePage = () => {
                   </div>
                 </div>
               </motion.div>
-              </div>
+            </div>
           </section>
 
           <section className="section w-screen h-screen flex items-center justify-center px-20">
@@ -205,7 +206,7 @@ const HomePage = () => {
                   </div>
                 </div>
               </motion.div>
-              </div>
+            </div>
           </section>
 
 
@@ -233,11 +234,11 @@ const HomePage = () => {
                   </div>
                 </div>
               </motion.div>
-              </div>
+            </div>
           </section>
 
-        
-         
+
+
 
 
 
@@ -248,29 +249,29 @@ const HomePage = () => {
               <motion.h2
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                className="text-9xl  text-nowrap text-red-600 font-bold basis-full"
+                className="text-9xl  text-nowrap text-[#fe6f61] font-bold basis-full"
               >
                 Our Services
               </motion.h2>
-              
-                
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1 * 0.1 }}
-                    className="space-y-5  rounded-lg backdrop-blur-sm"
-                  >
-                    <h3 className="text-5xl  font-pp-formula-condensed">Digital Design</h3>
-                    <p className="text-gray-400 text-xl">
-                      Gapsy Studio produces high-quality websites that look great on all devices. Our website designing services include web design, developement, e-commerce , SEO and more
-                    </p>
-                    <div className='flex flex-nowrap items-center gap-2'>
-                      <button className=" text-black border-4 border-black rounded-lg  p-2 text-xl hover:bg-black hover:text-white duration-300 hover:transition-all">
-                        <IoIosArrowForward />
-                      </button>
-                      <span>View More</span>
-                    </div>
-                  </motion.div>
+
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1 * 0.1 }}
+                className="space-y-5  rounded-lg backdrop-blur-sm"
+              >
+                <h3 className="text-5xl  font-pp-formula-condensed">Digital Design</h3>
+                <p className="text-gray-400 text-xl">
+                  Gapsy Studio produces high-quality websites that look great on all devices. Our website designing services include web design, developement, e-commerce , SEO and more
+                </p>
+                <div className='flex flex-nowrap items-center gap-2'>
+                  <button className=" text-black border-4 border-black rounded-lg  p-2 text-xl hover:bg-black hover:text-white duration-300 hover:transition-all">
+                    <IoIosArrowForward />
+                  </button>
+                  <span>View More</span>
+                </div>
+              </motion.div>
             </div>
           </section>
 
@@ -279,65 +280,65 @@ const HomePage = () => {
 
           <section className="section w-screen h-screen flex items-center  ">
             <div className=" flex gap-20">
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1 * 0.1 }}
-                    className="space-y-5  rounded-lg backdrop-blur-sm"
-                  >
-                    <h3 className="text-5xl  font-pp-formula-condensed">Digital Design</h3>
-                    <p className="text-gray-400 text-xl">
-                      Gapsy Studio produces high-quality websites that look great on all devices. Our website designing services include web design, developement, e-commerce , SEO and more
-                    </p>
-                    <div className='flex flex-nowrap items-center gap-2'>
-                      <button className=" text-black border-4 border-black rounded-lg  p-2 text-xl hover:bg-black hover:text-white duration-300 hover:transition-all">
-                        <IoIosArrowForward />
-                      </button>
-                      <span>View More</span>
-                    </div>
-                  </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1 * 0.1 }}
+                className="space-y-5  rounded-lg backdrop-blur-sm"
+              >
+                <h3 className="text-5xl  font-pp-formula-condensed">Digital Design</h3>
+                <p className="text-gray-400 text-xl">
+                  Gapsy Studio produces high-quality websites that look great on all devices. Our website designing services include web design, developement, e-commerce , SEO and more
+                </p>
+                <div className='flex flex-nowrap items-center gap-2'>
+                  <button className=" text-black border-4 border-black rounded-lg  p-2 text-xl hover:bg-black hover:text-white duration-300 hover:transition-all">
+                    <IoIosArrowForward />
+                  </button>
+                  <span>View More</span>
+                </div>
+              </motion.div>
 
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1 * 0.1 }}
-                    className="space-y-5  rounded-lg backdrop-blur-sm"
-                  >
-                    <h3 className="text-5xl  font-pp-formula-condensed">Digital Design</h3>
-                    <p className="text-gray-400 text-xl">
-                      Gapsy Studio produces high-quality websites that look great on all devices. Our website designing services include web design, developement, e-commerce , SEO and more
-                    </p>
-                    <div className='flex flex-nowrap items-center gap-2'>
-                      <button className=" text-black border-4 border-black rounded-lg  p-2 text-xl hover:bg-black hover:text-white duration-300 hover:transition-all">
-                        <IoIosArrowForward />
-                      </button>
-                      <span>View More</span>
-                    </div>
-                  </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1 * 0.1 }}
+                className="space-y-5  rounded-lg backdrop-blur-sm"
+              >
+                <h3 className="text-5xl  font-pp-formula-condensed">Digital Design</h3>
+                <p className="text-gray-400 text-xl">
+                  Gapsy Studio produces high-quality websites that look great on all devices. Our website designing services include web design, developement, e-commerce , SEO and more
+                </p>
+                <div className='flex flex-nowrap items-center gap-2'>
+                  <button className=" text-black border-4 border-black rounded-lg  p-2 text-xl hover:bg-black hover:text-white duration-300 hover:transition-all">
+                    <IoIosArrowForward />
+                  </button>
+                  <span>View More</span>
+                </div>
+              </motion.div>
 
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1 * 0.1 }}
-                    className="space-y-5  rounded-lg backdrop-blur-sm"
-                  >
-                    <h3 className="text-5xl  font-pp-formula-condensed">Digital Design</h3>
-                    <p className="text-gray-400 text-xl">
-                      Gapsy Studio produces high-quality websites that look great on all devices. Our website designing services include web design, developement, e-commerce , SEO and more
-                    </p>
-                    <div className='flex flex-nowrap items-center gap-2'>
-                      <button className=" text-black border-4 border-black rounded-lg  p-2 text-xl hover:bg-black hover:text-white duration-300 hover:transition-all">
-                        <IoIosArrowForward />
-                      </button>
-                      <span>View More</span>
-                    </div>
-                  </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1 * 0.1 }}
+                className="space-y-5  rounded-lg backdrop-blur-sm"
+              >
+                <h3 className="text-5xl  font-pp-formula-condensed">Digital Design</h3>
+                <p className="text-gray-400 text-xl">
+                  Gapsy Studio produces high-quality websites that look great on all devices. Our website designing services include web design, developement, e-commerce , SEO and more
+                </p>
+                <div className='flex flex-nowrap items-center gap-2'>
+                  <button className=" text-black border-4 border-black rounded-lg  p-2 text-xl hover:bg-black hover:text-white duration-300 hover:transition-all">
+                    <IoIosArrowForward />
+                  </button>
+                  <span>View More</span>
+                </div>
+              </motion.div>
             </div>
           </section>
 
 
 
-         
+
 
           {/* Contact Section */}
           <section className="section w-screen h-screen flex items-center px-20">
@@ -346,10 +347,11 @@ const HomePage = () => {
               whileInView={{ opacity: 1 }}
               className="w-full flex items-center"
             >
-              <h2 className="text-8xl font-bold mb-8 uppercase text-nowrap text-red-600 ">Get In Touch</h2>
-            <form className="space-y-6 ml-32">
+              <h2 className="text-8xl font-bold mb-8 uppercase text-nowrap text-[#fe6f61] ">Get In Touch</h2>
+              <form className="space-y-6 ml-32 lg:w-1/4">
                 <motion.div>
                   <input
+                  required
                     type="email"
                     placeholder="Your email"
                     className="w-full bg-gray-900/0 border border-gray-800 rounded-lg px-6 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors"
@@ -357,19 +359,33 @@ const HomePage = () => {
                 </motion.div>
                 <motion.div>
                   <textarea
+                  required
                     placeholder="Your message"
                     rows={4}
                     className="w-full bg-gray-900/0  border border-gray-800 rounded-lg px-6 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors"
                   ></textarea>
                 </motion.div>
-                <button
-                  type="submit"
-                  className="bg-black text-white px-8 py-4 rounded-lg font-bold hover:bg-gray-200 hover:text-black duration-300 hover:border hover:border-black transition-colors"
-                >
-                  Send Request
-                </button>
+                <div className='flex justify-between '>
+
+                  <div className='flex gap-3'>
+                          
+
+                          <label htmlFor='file' className='upload-btn block '>
+                          <ImAttachment />
+                          </label>
+                          
+                          <input type="file" name="file" id="file"  className='hidden' />
+                          <label htmlFor="file" className='border border-gray-400 shadow-sm rounded-md block p-2'>Attach File</label>
+                  </div>
+                  <button
+                    type="submit"
+                    className="animate-btn"
+                  >
+                    Send Request
+                  </button>
+                </div>
               </form>
-          </motion.div>
+            </motion.div>
           </section>
         </HorizontalScroll>
       </main>
