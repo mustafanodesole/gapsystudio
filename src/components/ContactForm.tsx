@@ -25,9 +25,9 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="wd-100 bg-black text-white font-sans flex flex-col">
+    <div className="wd-100 bg-black text-white font-sans flex flex-col sticky ">
       <div className="bg-black text-white p-8 font-sans flex flex-col justify-center">
-        <h1 className="text-6xl font-light mb-12 text-center">Let's talk business</h1>
+        <h1 className=" font-light mb-12 text-center text-9xl font-pp-formula-condensed">Let's talk business</h1>
         <form onSubmit={handleSubmit} className="space-y-8 max-w-4xl mx-auto grid grid-cols-2 gap-8">
           <div className="space-y-8">
             <div>
@@ -48,7 +48,7 @@ export default function ContactForm() {
                   type="button"
                   onClick={() => setSelectedService(service)}
 
-                  className={`px-4 py-2 border border-gray-800 bg-lightgray45 text-white rounded-lg cursor-pointer text-base font-medium transition-colors duration-300 hover:bg-gray-800 hover:text-white
+                  className={`hire-btn px-4 py-2 border-2 border-white bg-lightgray45 text-white rounded-lg cursor-pointer text-base font-medium transition-colors duration-300 hover:bg-gray-800 hover:text-white
                     ${selectedService === service
                       ? "bg-white text-black"
                       : "bg-gray-800 hover:bg-gray-700"
@@ -83,7 +83,7 @@ export default function ContactForm() {
               ></textarea>
             </div>
             <div className="flex justify-between items-center">
-              <label htmlFor="file-upload" className="flex items-center px-4 py-2 bg-red-500 text-white rounded-full text-sm cursor-pointer hover:bg-red-600 transition-colors">
+              <label htmlFor="file-upload" className="upload-btn flex items-center px-4 py-2  text-white rounded-full text-sm cursor-pointer">
                 <Paperclip className="w-4 h-4 mr-2" />
                 Attach file
                 <input id="file-upload" type="file" className="hidden" />

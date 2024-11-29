@@ -12,9 +12,10 @@ export default {
 
         'rockSalt': ["Rock Salt"],
         'pp-formula-condensed': ['PP Formula Condensed', 'sans-serif'],
+        'neue-montreal' : ['Neue Montreal']
 
       }
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide")],
 };

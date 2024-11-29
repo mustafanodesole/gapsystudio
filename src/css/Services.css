@@ -146,8 +146,8 @@
     background-color: #0056b3;
   }
   .container {
-    width: 90%;
-    max-width: 1200px;
+    width: 60%;
+    max-width: 66%;
     margin: 0 auto;
     padding: 20px;
     font-family: Arial, sans-serif;
@@ -200,7 +200,7 @@
 
   .app-container {
     width: 90%;
-    max-width: 1200px;
+    max-width: 70%;
     margin: 0 auto;
     font-family: Arial, sans-serif;
   }

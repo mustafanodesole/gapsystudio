@@ -3,36 +3,62 @@ import ContactForm from './ContactForm';
 import Testimonials from './Testimonials';
 import '../css/Services.css';
 import '../css/Team.css';
+import styled from 'styled-components';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper-bundle.css';
 
-const services = [
-  {
-    title: "Web Design",
-    description: "High-quality websites optimized for all devices.",
-    image: "path-to-web-design-image",
-  },
-  {
-    title: "Mobile App Design",
-    description: "User-friendly and visually appealing mobile apps.",
-    image: "path-to-mobile-design-image",
-  },
-  // Add other services here
-];
+
 const services2 = [
   {
     title: 'Web Design',
     description: 'Gapsy Studio produces high-quality websites that look great on all devices...',
+    url: '/images/web-design.webp'
   },
   {
     title: 'Mobile App Design',
     description: 'Custom app design services in Gapsy can help your business...',
+    url: '/images/mobile-app2.webp'
   },
   {
     title: 'Web Development',
     description: 'Gapsy Studio offers web development services that can help...',
+    url: '/images/web-development.webp'
   },
   {
     title: 'Branding Design',
-    description: 'If you’re looking for branding design services, look no further...',
+    description: 'If you\'re looking for branding design services, look no further...',
+    url: '/images/branding1-min-1.webp'
+  },
+  {
+    title: 'Motion Design',
+    description: 'Gapsy studio specializes in creating high-quality, innovative, and engaging motion graphic services for various clients and projects.',
+    url: '/images/motion.webp'
+  },
+
+  {
+    title: 'UX Audit',
+    description: 'Gapsy\'s user experience audit services are designed to help get a detailed report highlighting any areas that need improvement and fixing on your website or in the app.',
+    url: '/images/ux-audit.webp'
+  },
+
+
+  {
+    title: 'UI/UX Design',
+    description: 'We are a full-service design studio providing world-class UI/UX designing services to startups and enterprises.',
+    url: '/images/ui-ux.webp'
+  },
+
+
+  {
+    title: 'Illustration Design',
+    description: 'Looking for an illustration design service that can help bring your vision to life? Our designers can create custom illustrations that are perfect for any project.',
+    url: '/images/illustration.webp'
+  },
+
+  {
+    title: '3D Modeling',
+    description: '3D modeling design services from Gapsy are the perfect way to add that extra dimension to your project. Gapsy can bring your vision to life in a way that is both creative and realistic.',
+    url: '/images/3d.webp'
   },
 ];
 const faqs = [
@@ -90,11 +116,12 @@ function FAQItem({ question, answer }) {
 
 const BenefitCard = ({ icon, title, text }) => {
   return (
-    <div className="benefit-card">
-      <div className="icon">{icon}</div>
-      <div>
-        <h3 className="title">{title}</h3>
-        <p className="text">{text}</p>
+    <div className="flex items-start justify-center gap-5">
+      {/* <div className="icon">{icon}</div> */}
+      <img src={icon} className='w-36' />
+      <div className='space-y-5'>
+        <h3 className=" text-4xl font-light font-pp-formula-condensed">{title}</h3>
+        <p className="text font-neue-montreal text-xl">{text}</p>
       </div>
     </div>
   );
@@ -114,52 +141,87 @@ const teamMembers = [
 
 function TeamCard({ image, name, role }) {
   return (
-    <div className="team-card">
+    <div className="team-card ">
       <img src={image} alt={`${name}`} className="team-image2" />
       <div className="team-info">
         <h3 className="team-name">{name}</h3>
         <p className="team-role">{role}</p>
       </div>
+
     </div>
   );
 }
 
-function ServiceCard({ title, description }) {
+function ServiceCard({ title, description, imageUrl }) {
   return (
-    <div className="team-service-card">
+    <div className="team-service-card hover:bg-white group relative">
+      <img src={imageUrl} className='hidden group-hover:block absolute -top-10 left-32 rounded-lg animate-pulse' />
       <div className="team-service-title">
         <h3>{title}</h3>
       </div>
       <div className="team-service-content">
         <p>{description}</p>
-        <button className="team-view-more-button">
-          <span className="arrow-icon">&gt;</span> View More
+        <button className="team-view-more-button ">
+          <button className="arrow-icon animate-btn">&gt;</button> View More
         </button>
       </div>
     </div>
   );
 }
 const About = () => {
+
+  const carouselRef = useRef(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    carouselRef.current.style.scrollBehavior = "auto"; // Disable snapping during dragging
+    setStartX(e.pageX - carouselRef.current.offsetLeft);
+    setScrollLeft(carouselRef.current.scrollLeft);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+    carouselRef.current.style.scrollBehavior = "smooth"; // Re-enable snapping after dragging
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - carouselRef.current.offsetLeft;
+    const walk = (x - startX) * 2; // Adjust sensitivity (higher = faster scroll)
+    carouselRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+
+
   return (
-    <div>
+    <div className=''>
       <section className="hero-container">
-        <div className="hero-content">
-          <div className="hero-content2">
+        <div className="">
+          <div className="hero-content2 w-2/4 mx-auto">
             <div className="hero-content3">
               <img alt="Breadcrumbs" aria-hidden="true" loading="lazy" width="24" height="24" decoding="async" data-nimg="1" class="styles_label__fRSpJ" src="/breadcrumbs.svg" />
-              <h2 className="subheading">Gapsy / About</h2>
+              <h2 className="subheading"> <a href="/" className='hover:underline duration-500'> Gapsy </a> / About</h2>
             </div>
-            <p className="description">
+            <p className="description font-rockSalt text-black ">
               Any project in mind? Drop us a line.
             </p>
           </div>
-          <h1 className="main-heading">Bringing People Together - Meet Our Friendly Team</h1>
-          <div className="divider"></div> {/* Divider line */}
-          <div className="hero-content2">
-            <button className="hire-us-button">Hire us</button>
-            <p className="description2">
+          <h1 className="main-heading font-pp-formula-condensed text-9xl w-2/3  mx-auto">Bringing People Together - Meet Our Friendly Team</h1>
+          <div className="divider w-2/3 mx-auto"></div> {/* Divider line */}
+
+          <div className="hero-content2 flex items-center w-2/3 mx-auto justify-between">
+            <button className="hire-btn">Our Services</button>
+            <p className="description2 font-neue-montreal">
               Gapsy Studio is an innovative web and mobile app design studio based in Dnipro. We are a tribe of a go-getter with outstanding experience and a reputation for building and transforming ideas into a global brand. We aren’t just creative and digital design fanatics; we are caring and passionate about your business success.
             </p>
+          </div>
+          <div className='py-10 mx-auto'>
+            <img src='/images/cover.png' className='mx-auto' />
+
           </div>
         </div>
       </section>
@@ -176,10 +238,10 @@ const About = () => {
           When you work with us, we can help you become one of them.
         </p>
         <img src={'/team.webp'} alt={"Team"} className="team-image" />
-        <h1 className="header">Gapsy always ready to start to take risks. Here, risk-taking is not only welcomed but encouraged.</h1>
+        <h1 className="header font-pp-formula-condensed">Gapsy always ready to start to take risks. Here, risk-taking is not only welcomed but encouraged.</h1>
         <div className="hero-content2">
           <p />
-          <p className="description4">
+          <p className="description4 ">
             Because we’re independent, we do things our way. United by way of some corporate overlord,
             we can experiment with new processes and techniques to create pure, original, and exciting solutions.
             Those who work here come from different areas of expertise. One of us was a full-time professional burlesque dancer.
@@ -188,17 +250,32 @@ const About = () => {
       </div>
 
       <section className="team-section">
-        <div className="team-cards">
-          {teamMembers.map((member, index) => (
-            <TeamCard key={index} {...member} />
-          ))}
+        <div className="relative w-full overflow-hidden team-cards">
+
+          <Swiper
+            spaceBetween={20} // Spacing between slides
+            slidesPerView={4} // Number of slides visible
+            // Enables navigation buttons
+            pagination={{ clickable: true }} // Enables pagination dots
+
+          >
+            {teamMembers.map((member, index) => (
+              <SwiperSlide>
+                <TeamCard key={index} {...member} />
+              </SwiperSlide>
+            ))}
+
+
+          </Swiper>
+
         </div>
       </section>
       <section className="team-services-section">
         <h1 className="header">Help companies from all over the world with tailor-made solutions. With each project.</h1>
         <div className="divider"></div> {/* Divider line */}
-        <div className="hero-content2">
-          <button className="hire-us-button">Hire us</button>
+
+        <div className="hero-content2 items-center">
+          <button className=" hire-btn">Hire us</button>
           <p className="description2">
             Keeping in mind the company's experience and desire to be continuously improved, we became experts of innovative projects in
             the design and consulting spheres. Because of applying the best international practices and home grown software that have been
@@ -206,10 +283,21 @@ const About = () => {
           </p>
         </div>
         <div className="divider"></div> {/* Divider line */}
+
+
+
         {services2.map((service, index) => (
-          <ServiceCard key={index} {...service} />
+          <ServiceCard key={index} {...service} imageUrl={service.url} />
         ))}
+
+
       </section>
+
+
+
+
+
+
       <div className="container">
         <h1 className="header">We work with the most progressive companies from all over the world.</h1>
         <div className="divider"></div> {/* Divider line */}
@@ -223,24 +311,24 @@ const About = () => {
             Gapsy web design Studio include:
           </p>
         </div>
-        <div className="benefits">
+        <div className="grid grid-cols-2 gap-20  md:px-32 py-10 mx-auto">
           <BenefitCard
-            icon="🌍"
+            icon="/images/timezone-min-1.webp"
             title="Time zones are not a problem"
             text="We are available to work with clients in any time zone. In addition, we have team members in different time zones who can work with you to get your project done on time. This allows us to be more flexible with our clients and to work on their schedule."
           />
           <BenefitCard
-            icon="📅"
+            icon="/images/flexible-min-1.webp"
             title="Flexible project work schedule"
             text="We are flexible with our project work schedule and can work around your schedule. We understand that our clients have different schedules and we will work with you to get the project done when it is convenient for you."
           />
           <BenefitCard
-            icon="💲"
+            icon="/images/affordable-min-1.webp"
             title="Affordable pricing policy suits all customers"
             text="We have an affordable pricing policy that allows our services to be accessible to a wide range of customers."
           />
           <BenefitCard
-            icon="🤝"
+            icon="/images/specialists-min-1.webp"
             title="Specialists for solving different problems"
             text="We have specialists for solving different problems, ensuring that our clients receive the most appropriate solutions."
           />
@@ -254,12 +342,18 @@ const About = () => {
           ))}
         </div>
       </div>
-      <div className="app-container">
+      <div className="py-10">
         <Testimonials />
       </div>
       <ContactForm />
     </div>
   );
 };
+
+const BackgroundImage = styled.div`
+  backgroundImage : url('/images/cover-2.png');
+  width : '200px';
+
+`
 
 export default About;

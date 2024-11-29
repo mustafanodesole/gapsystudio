@@ -1,5 +1,7 @@
 import React from 'react';
 import '../css/Testimonial.css'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper-bundle.css';
 
 const testimonials = [
     {
@@ -79,12 +81,22 @@ function TestimonialCard({ text, author, title, company, image }) {
 
 function Testimonials() {
     return (
-        <div className="testimonials-section">
-            <h1 className="header">Want to know what our clients think about working with us?</h1>
-            <div className="testimonials-cards">
-                {testimonials.map((testimonial, index) => (
-                    <TestimonialCard key={index} {...testimonial} />
-                ))}
+        <div className="testimonials-section py-20 px-10">
+            <h1 className="header app-container">Want to know what our clients think about working with us?</h1>
+            <div className="">
+                <Swiper
+                    spaceBetween={0} // Spacing between slides
+                    slidesPerView={3} // Number of slides visible
+                    // Enables navigation buttons
+                    pagination={{ clickable: true }} // Enables pagination dots
+
+                >
+                    {testimonials.map((testimonial, index) => (
+                        <SwiperSlide>
+                            <TestimonialCard key={index} {...testimonial} />
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
             </div>
         </div>
     );

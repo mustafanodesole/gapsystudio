@@ -347,11 +347,11 @@ const HomePage = () => {
               whileInView={{ opacity: 1 }}
               className="w-full flex items-center"
             >
-              <h2 className="text-8xl font-bold mb-8 uppercase text-nowrap text-[#fe6f61] ">Get In Touch</h2>
+              <h2 className="text-8xl font-bold mb-8 uppercase text-nowrap text-[#fe6f61]  ">Get In Touch</h2>
               <form className="space-y-6 ml-32 lg:w-1/4">
                 <motion.div>
                   <input
-                  required
+                    required
                     type="email"
                     placeholder="Your email"
                     className="w-full bg-gray-900/0 border border-gray-800 rounded-lg px-6 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors"
@@ -359,7 +359,7 @@ const HomePage = () => {
                 </motion.div>
                 <motion.div>
                   <textarea
-                  required
+                    required
                     placeholder="Your message"
                     rows={4}
                     className="w-full bg-gray-900/0  border border-gray-800 rounded-lg px-6 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors"
@@ -368,14 +368,14 @@ const HomePage = () => {
                 <div className='flex justify-between '>
 
                   <div className='flex gap-3'>
-                          
 
-                          <label htmlFor='file' className='upload-btn block '>
-                          <ImAttachment />
-                          </label>
-                          
-                          <input type="file" name="file" id="file"  className='hidden' />
-                          <label htmlFor="file" className='border border-gray-400 shadow-sm rounded-md block p-2'>Attach File</label>
+
+                    <label htmlFor='file' className='upload-btn block '>
+                      <ImAttachment />
+                    </label>
+
+                    <input type="file" name="file" id="file" className='hidden' />
+                    <label htmlFor="file" className='border border-gray-400 shadow-sm rounded-md block p-2'>Attach File</label>
                   </div>
                   <button
                     type="submit"
