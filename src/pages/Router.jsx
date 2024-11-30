@@ -7,6 +7,7 @@ import ContactPage from '../components/Contact';
 import Team from '../components/Team';
 import Header from '../components/Header';
 import HomePage from './Home';
+import Industries from '../components/Industries'
 
 const AppRouter = () => {
     return (
@@ -27,6 +28,7 @@ const AppRouter = () => {
                                     <Route path="/services" element={<Services />} />
                                     <Route path="/contacts" element={<ContactPage />} />
                                     <Route path="/herosections" element={<HeroSection />} />
+                                    <Route path="/industries" element={<Industries />} />
                                     {/* Add more routes here */}
                                 </Routes>
                             </>

@@ -203,7 +203,7 @@ const About = () => {
         <div className="">
           <div className="hero-content2 w-2/4 mx-auto">
             <div className="hero-content3">
-              <img alt="Breadcrumbs" aria-hidden="true" loading="lazy" width="24" height="24" decoding="async" data-nimg="1" class="styles_label__fRSpJ" src="/breadcrumbs.svg" />
+              <img alt="Breadcrumbs" aria-hidden="true" loading="lazy" width="24" height="24" decoding="async" data-nimg="1" className="styles_label__fRSpJ" src="/breadcrumbs.svg" />
               <h2 className="subheading"> <a href="/" className='hover:underline duration-500'> Gapsy </a> / About</h2>
             </div>
             <p className="description font-rockSalt text-black ">
