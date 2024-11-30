@@ -46,7 +46,7 @@ const Industries = () => {
 const Experience = ({heading, videoUrl , subHeading , description }) => {
   return (
     <div>
-        hELLO
+        Experience
     </div>
   )
 }
