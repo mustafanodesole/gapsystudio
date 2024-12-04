@@ -158,25 +158,33 @@ const Industries = () => {
           </>)}
 
         </div>
+
+        <div className="px-5">
+
         <Swiper
-            spaceBetween={20} // Spacing between slides
-            slidesPerView={2} // Number of slides visible
+            spaceBetween={30} // Spacing between slides
+            slidesPerView={3} // Number of slides visible
             // Enables navigation buttons
             pagination={{ clickable: true }} // Enables pagination dots
-
-          >
+            
+            >
            
               <SwiperSlide>
-                  <img src='/images/adseller-1.webp'/>
-                  <img src='/images/rkde.webp'/>
-                  <img src='/images/scoop-solar.webp'/>
+                  <img src='/images/adseller-1.webp' className="hover:scale-110 duration-500"/>
               </SwiperSlide>
+              <SwiperSlide>
+                <img src='/images/rkde.webp' className="hover:scale-110 duration-500"/>
+              </SwiperSlide>
+               <SwiperSlide>
+                  <img src='/images/scoop-solar.webp' className="hover:scale-110 duration-500"/>
+              </SwiperSlide>
+          </Swiper>
+            </div>
+      </section>
+    </main>
           
 
 
-          </Swiper>
-      </section>
-    </main>
   )
 }
 
@@ -201,8 +209,8 @@ const Experience = ({ heading, videoUrl, subHeading, description, imageUrl, poin
           <p className="font-neue-montreal">{description}</p>
 
           {points && 
-          <ul className="grid grid-cols-2">
-            {points.map((point) => <>  <li className="flex gap-4"> <img src="/icons/list-icon.svg"/> <p>{point}</p> </li>  </>)}
+          <ul className="grid grid-cols-2 gap-4 ">
+            {points.map((point) => <>  <li className="flex gap-2 items-baseline"> <img src="/icons/list-icon.svg" width={20}/> <p>{point}</p> </li>  </>)}
            </ul>
           }
 
