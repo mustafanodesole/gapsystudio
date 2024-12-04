@@ -84,10 +84,41 @@ const experiences = [
 
   {
     imageUrl: '/images/webflow-services.png',
-    heading: "Education",
+    heading: "Webflow",
     subHeading: 'Gapsy spcialized in the Education Design Industry, providing innovative solutions for educational institutions',
     description: 'With over 10 years of hands-on experience, our team has a deep understanding of what works best in the education sector. We offer services that range from curriculum design to course development and implementation. Our services are tailored to the specific needs of each client, helping them create an environment that fosters engagement and learning.',
 
+  },
+
+  {
+    imageUrl: '/images/webflow-services.png',
+    heading: "DeFi",
+    subHeading: 'Revolutionizing Financec: Expert DeFi Design and Developement Services',
+    description: 'Gapsy Studio excels in providing cutting-edge DeFi design services, blending innovative technology with intuitive user interfaces to deliver seamless and secure decentralized finance solutions. Our expertise in DeFi ensures user-friendly, engaging designs that enhance user trust and interaction in the dynamic world of digital finance.', 
+    points : [
+      'Branding and Indetity Developement for DeFi Platforms' , 'User Interface Design for DeFi Applications:' , 'Infographic Design for DeFi Concepts:', 'Marketing Materials for DeFi Services:', 'Token Design and Branding:',
+    ]
+  },
+
+  {
+    imageUrl: '/images/webflow-services.png',
+    heading: "Web 3 Design",
+    subHeading: 'Crafting decentralized digital experiences that are seamless, user-focused, and future-ready.',
+    description: 'We have collaborated with some of the leading innovators in the Web3 space and understand the unique challenges that come with designing for decentralized platforms. From building intuitive blockchain-based applications to crafting immersive metaverse experiences, we have the expertise and experience to help you thrive. Some of the Web3 design services we offer include:', 
+    points : [
+      'DeFi Platform Design' , 'NFT Marketplace Design' , 'Metaverse Experience Design', 'Blockchain App UI/UX', 'DAO Dashboard Design',
+    ]
+  },
+
+
+  {
+    imageUrl: '/images/webflow-services.png',
+    heading: "Crypto Web Design",
+    subHeading: 'Gapsy Design has a long history of providing top-notch design services to the cryptocurrency industry.',
+    description: 'We have partnered with some of the biggest names in the cryptocurrency space and have a deep understanding of the unique challenges that come with designing for blockchain-based platforms. From building secure crypto wallets to developing intuitive DeFi interfaces, we have the experience and expertise to help you thrive. Some of the cryptocurrency design services we offer include:', 
+    points : [
+      'DeFi Platform Design' , 'Crypto Wallet Design' , 'NFT Marketplace Design', 'Blockchain App UI/UX', 'Exchange Platform Design',
+    ]
   },
 
 
@@ -120,7 +151,8 @@ const Industries = () => {
         <div className="md:w-2/3 lg:px-32 mx-auto space-y-10">
 
           {experiences.map((experience) => <>
-            <Experience heading={experience.heading} videoUrl={experience.videoUrl} subHeading={experience.subHeading} description={experience.description} imageUrl={experience.imageUrl}/>
+            <Experience heading={experience.heading} videoUrl={experience.videoUrl} subHeading={experience.subHeading} description={experience.description} imageUrl={experience.imageUrl} points={experience.points}/>
+            <hr />
           </>)}
 
         </div>
@@ -129,29 +161,39 @@ const Industries = () => {
   )
 }
 
-const Experience = ({ heading, videoUrl, subHeading, description, imageUrl }) => {
+const Experience = ({ heading, videoUrl, subHeading, description, imageUrl, points }) => {
   return (
     <section>
-      <h2 className="text-9xl font-extralight font-pp-formula-condensed">{heading}</h2>
+      <h2 className="text-9xl font-extralight font-pp-formula-condensed py-6">{heading}</h2>
       <div className="flex flex-wrap lg:flex-nowrap items-center gap-5">
 
         {videoUrl && <video className="rounded-xl basis-1/3"  controls autoPlay loop width={500}>
           <source src={videoUrl} type="video/mp4" />
-        </video>}
+            </video>}
 
 
-          {imageUrl && 
-          <img src={imageUrl} className="rounded-xl w-1/2 h-[500px] object-cover  hover:rotate-12 duration-300" />
-          }
+          {imageUrl &&   <img src={imageUrl} className="rounded-xl w-1/2 h-[500px] object-cover  hover:rotate-12 duration-300" />}
+
+
+
         
         <div className="space-y-6">
           <p className="font-pp-formula-condensed text-3xl font-light text-black">{subHeading}</p>
           <p className="font-neue-montreal">{description}</p>
+
+          {points && 
+          <ul>
+            {points.map((point) => <>  <li className="flex"> <img src="/icons/list-icon.svg"/> <p>{point}</p> </li>  </>)}
+           </ul>
+          }
+          
           <span className="flex flex-nowrap items-center gap-3">
 
-          <button className="animate-btn"> <IoIosArrowForward /> </button>
-          <p className="text-black font-neue-montreal">View More</p>
+              <button className="animate-btn"> <IoIosArrowForward /> </button>
+              <p className="text-black font-neue-montreal">View More</p>
           </span>
+
+
         </div>
       </div>
     </section>
