@@ -1,5 +1,7 @@
 import React from "react"
 import { IoIosArrowForward } from "react-icons/io";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper-bundle.css';
 
 
 const experiences = [
@@ -8,7 +10,7 @@ const experiences = [
     heading: "Healthcare",
     subHeading: 'Gapsy Design has a long history of providing top-notch design services to the healthare industry.',
     description: 'We have worked with some of the biggest names in the business, and we have a deep understanding of the unique challenges that come with designing for healthcare. From creating engaging patient education materials to designing cutting-edge medical devices, we have the experience and expertise to help you succeed. Some of the healthcare design services we offer include',
-
+    points : ['Patient education materials','Medical device design','Graphic design for healthcare marketing materials','Branding and identity development for healthcare organizations']
   },
 
   {
@@ -156,6 +158,23 @@ const Industries = () => {
           </>)}
 
         </div>
+        <Swiper
+            spaceBetween={20} // Spacing between slides
+            slidesPerView={2} // Number of slides visible
+            // Enables navigation buttons
+            pagination={{ clickable: true }} // Enables pagination dots
+
+          >
+           
+              <SwiperSlide>
+                  <img src='/images/adseller-1.webp'/>
+                  <img src='/images/rkde.webp'/>
+                  <img src='/images/scoop-solar.webp'/>
+              </SwiperSlide>
+          
+
+
+          </Swiper>
       </section>
     </main>
   )
@@ -177,16 +196,16 @@ const Experience = ({ heading, videoUrl, subHeading, description, imageUrl, poin
 
 
         
-        <div className="space-y-6">
+        <div className="space-y-7">
           <p className="font-pp-formula-condensed text-3xl font-light text-black">{subHeading}</p>
           <p className="font-neue-montreal">{description}</p>
 
           {points && 
-          <ul>
-            {points.map((point) => <>  <li className="flex"> <img src="/icons/list-icon.svg"/> <p>{point}</p> </li>  </>)}
+          <ul className="grid grid-cols-2">
+            {points.map((point) => <>  <li className="flex gap-4"> <img src="/icons/list-icon.svg"/> <p>{point}</p> </li>  </>)}
            </ul>
           }
-          
+
           <span className="flex flex-nowrap items-center gap-3">
 
               <button className="animate-btn"> <IoIosArrowForward /> </button>
