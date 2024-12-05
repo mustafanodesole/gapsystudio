@@ -253,8 +253,8 @@ const About = () => {
         <div className="relative w-full overflow-hidden team-cards">
 
           <Swiper
-            spaceBetween={20} // Spacing between slides
-            slidesPerView={4} // Number of slides visible
+            spaceBetween={25} // Spacing between slides
+            slidesPerView={3.5} // Number of slides visible
             // Enables navigation buttons
             pagination={{ clickable: true }} // Enables pagination dots
 
@@ -284,19 +284,12 @@ const About = () => {
         </div>
         <div className="divider"></div> {/* Divider line */}
 
-
-
         {services2.map((service, index) => (
           <ServiceCard key={index} {...service} imageUrl={service.url} />
         ))}
 
 
       </section>
-
-
-
-
-
 
       <div className="container">
         <h1 className="header">We work with the most progressive companies from all over the world.</h1>
@@ -345,7 +338,7 @@ const About = () => {
       <div className="py-10">
         <Testimonials />
       </div>
-      <ContactForm />
+      {/* <ContactForm /> */}
     </div>
   );
 };

@@ -60,7 +60,7 @@ function TestimonialCard({ text, author, title, company, image }) {
         <div className="testimonial-card">
             <div>
                 <p className="testimonial-text2">"</p>
-                <p className="testimonial-text">{text}</p>
+                <p className="testimonial-text font-neue-montreal">{text}</p>
             </div>
             <div className="testimonial-author">
                 <div className="author-details">
@@ -81,12 +81,12 @@ function TestimonialCard({ text, author, title, company, image }) {
 
 function Testimonials() {
     return (
-        <div className="testimonials-section py-20 px-10">
-            <h1 className="header app-container">Want to know what our clients think about working with us?</h1>
+        <div className="-section py-20 px-10">
+            <h1 className="header app-container font-pp-formula-condensed font-extralight">Want to know what our clients think about working with us?</h1>
             <div className="">
                 <Swiper
-                    spaceBetween={0} // Spacing between slides
-                    slidesPerView={3} // Number of slides visible
+                    spaceBetween={30} // Spacing between slides
+                    slidesPerView={2.5} // Number of slides visible
                     // Enables navigation buttons
                     pagination={{ clickable: true }} // Enables pagination dots
 

@@ -8,7 +8,10 @@ import Team from '../components/Team';
 import Header from '../components/Header';
 import HomePage from './Home';
 import Industries from '../components/Industries'
-
+import Blogs from '../components/Blogs';
+import BlogPage from '../components/BlogPage';
+import IndustryPage from '../components/IndustryPage';
+import ContactForm from '../components/ContactForm';
 const AppRouter = () => {
     return (
         <Router>
@@ -29,8 +32,12 @@ const AppRouter = () => {
                                     <Route path="/contacts" element={<ContactPage />} />
                                     <Route path="/herosections" element={<HeroSection />} />
                                     <Route path="/industries" element={<Industries />} />
+                                    <Route path="/industries/:slug" element={<IndustryPage />} />
+                                    <Route path="/blog" element={<Blogs />} />
+                                    <Route path="/blog/:slug" element={<BlogPage />} />
                                     {/* Add more routes here */}
                                 </Routes>
+                                <ContactForm />
                             </>
                         }
                     />

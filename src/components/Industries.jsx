@@ -2,7 +2,7 @@ import React from "react"
 import { IoIosArrowForward } from "react-icons/io";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
-
+import Footer from "./Footer";
 
 const experiences = [
   {
@@ -150,7 +150,7 @@ const Industries = () => {
           </div>
 
         </div>
-        <div className="md:w-2/3 lg:px-32 mx-auto space-y-10">
+        <div className="md:w-2/3 lg:px-32 mx-auto space-y-10 py-10">
 
           {experiences.map((experience) => <>
             <Experience heading={experience.heading} videoUrl={experience.videoUrl} subHeading={experience.subHeading} description={experience.description} imageUrl={experience.imageUrl} points={experience.points}/>
@@ -170,17 +170,27 @@ const Industries = () => {
             >
            
               <SwiperSlide>
-                  <img src='/images/adseller-1.webp' className="hover:scale-110 duration-500"/>
+                  <img src='/images/adseller-1.webp' className="hover:scale-110 duration-500 w-[600px] h-[350px]" />
               </SwiperSlide>
               <SwiperSlide>
-                <img src='/images/rkde.webp' className="hover:scale-110 duration-500"/>
+                <img src='/images/rkde.webp' className="hover:scale-110 duration-500 w-[600px] h-[350px]"/>
               </SwiperSlide>
                <SwiperSlide>
-                  <img src='/images/scoop-solar.webp' className="hover:scale-110 duration-500"/>
+                  <img src='/images/scoop-solar.webp' className="hover:scale-110 duration-500 w-[600px] h-[350px]"/>
+              </SwiperSlide>
+              <SwiperSlide>
+                  <img src='/images/creatorset.webp' className="hover:scale-110 duration-500 w-[600px] h-[350px]"/>
+              </SwiperSlide>
+              <SwiperSlide>
+                  <img src='/images/mind-cleanse.webp' className="hover:scale-110 duration-500 w-[600px] h-[350px]"/>
+              </SwiperSlide>
+              <SwiperSlide>
+                  <img src='/images/pickle.webp' className="hover:scale-110 duration-500 w-[600px] h-[350px]"/>
               </SwiperSlide>
           </Swiper>
             </div>
       </section>
+
     </main>
           
 
@@ -194,18 +204,18 @@ const Experience = ({ heading, videoUrl, subHeading, description, imageUrl, poin
       <h2 className="text-9xl font-extralight font-pp-formula-condensed py-6">{heading}</h2>
       <div className="flex flex-wrap lg:flex-nowrap items-center gap-5">
 
-        {videoUrl && <video className="rounded-xl basis-1/3"  controls autoPlay loop width={500}>
+        {videoUrl && <video className="rounded-xl basis-1/3"   autoPlay loop width={500}>
           <source src={videoUrl} type="video/mp4" />
-            </video>}
+            </video> }
 
 
-          {imageUrl &&   <img src={imageUrl} className="rounded-xl w-1/2 h-[500px] object-cover  hover:rotate-12 duration-300" />}
+          {imageUrl &&  <img src={imageUrl} className="rounded-xl w-1/2 h-[500px] object-cover  hover:rotate-6 duration-300" />}
 
 
 
         
         <div className="space-y-7">
-          <p className="font-pp-formula-condensed text-3xl font-light text-black">{subHeading}</p>
+          <p className="font-pp-formula-condensed text-3xl font-light text-black"> <a className="lowercase" href={`/industries/${heading}`} > {subHeading} </a></p>
           <p className="font-neue-montreal">{description}</p>
 
           {points && 

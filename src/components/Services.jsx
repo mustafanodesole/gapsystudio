@@ -71,16 +71,16 @@ function FAQItem({ question, answer }) {
 
 const BenefitCard = ({ icon, title, text }) => {
   return (
-    <div className="benefit-card">
-      <div className="icon">{icon}</div>
-      <div>
-        <h3 className="title">{title}</h3>
-        <p className="text">{text}</p>
+    <div className="flex items-start justify-center gap-5">
+      {/* <div className="icon">{icon}</div> */}
+      <img src={icon} className='w-36' />
+      <div className='space-y-5'>
+        <h3 className=" text-4xl font-light font-pp-formula-condensed">{title}</h3>
+        <p className="text font-neue-montreal text-xl">{text}</p>
       </div>
     </div>
   );
 };
-
 const Services = () => {
   return (
     <div>
@@ -91,15 +91,15 @@ const Services = () => {
               <img alt="Breadcrumbs" aria-hidden="true" loading="lazy" width="24" height="24" decoding="async" data-nimg="1" class="styles_label__fRSpJ" src="/breadcrumbs.svg" />
               <h2 className="subheading">Gapsy / Services</h2>
             </div>
-            <p className="description">
+            <p className="description font-rockSalt">
               Bring your dream project to life with one of our 8 comprehensive services!
             </p>
           </div>
-          <h1 className="main-heading">Design Studio that Brings Creativity to Life!</h1>
+          <h1 className="main-heading font-pp-formula-condensed">Design Studio that Brings Creativity to Life!</h1>
           <div className="divider"></div> {/* Divider line */}
           <div className="hero-content2">
             <button className="hire-us-button">Hire us</button>
-            <p className="description2">
+            <p className="description2 font-neue-montreal">
               Gapsy is a digital agency specializing in mobile and web design and development, branding and animation.Gapsy is a digital agency specializing in mobile and web design and development, branding and animation.
             </p>
           </div>
@@ -120,7 +120,7 @@ const Services = () => {
         ))}
       </div>
       <div className="container">
-        <h1 className="header">We work with the most progressive companies from all over the world.</h1>
+        <h1 className="header font-pp-formula-condensed font-extralight">We work with the most progressive companies from all over the world.</h1>
         <div className="divider"></div> {/* Divider line */}
         <div className="hero-content2">
           <p />
@@ -132,42 +132,42 @@ const Services = () => {
             Gapsy web design Studio include:
           </p>
         </div>
-        <div className="benefits">
+        <div className="grid grid-cols-2 gap-20  md:px-32 py-10 mx-auto">
           <BenefitCard
-            icon="🌍"
+            icon="/images/timezone-min-1.webp"
             title="Time zones are not a problem"
             text="We are available to work with clients in any time zone. In addition, we have team members in different time zones who can work with you to get your project done on time. This allows us to be more flexible with our clients and to work on their schedule."
           />
           <BenefitCard
-            icon="📅"
+            icon="/images/flexible-min-1.webp"
             title="Flexible project work schedule"
             text="We are flexible with our project work schedule and can work around your schedule. We understand that our clients have different schedules and we will work with you to get the project done when it is convenient for you."
           />
           <BenefitCard
-            icon="💲"
+            icon="/images/affordable-min-1.webp"
             title="Affordable pricing policy suits all customers"
             text="We have an affordable pricing policy that allows our services to be accessible to a wide range of customers."
           />
           <BenefitCard
-            icon="🤝"
+            icon="/images/specialists-min-1.webp"
             title="Specialists for solving different problems"
             text="We have specialists for solving different problems, ensuring that our clients receive the most appropriate solutions."
           />
         </div>
       </div>
       <div className="app-container">
-        <h1 className="header">Do you have any questions? We tried to answer most of them!</h1>
+        <h1 className="header font-pp-formula-condensed font-extralight">Do you have any questions? We tried to answer most of them!</h1>
         <div className="faq-list">
           {faqs.map((faq, index) => (
             <FAQItem key={index} question={faq.question} answer={faq.answer} />
           ))}
         </div>
       </div>
-      <div className="app-container">
+      <div className="">
         <Testimonials />
       </div>
 
-      <ContactForm />
+      {/* <ContactForm /> */}
     </div>
   );
 };
