@@ -387,6 +387,8 @@ const HomePage = () => {
               </form>
             </motion.div>
           </section>
+
+          <section className='w-screen h-screen'></section>
         </HorizontalScroll>
       </main>
       <Footer />
