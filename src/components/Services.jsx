@@ -125,7 +125,7 @@ function FAQItem({ question, answer }) {
 
 const BenefitCard = ({ icon, title, text }) => {
   return (
-    <div className="flex items-start justify-center gap-5">
+    <div className="flex flex-wrap sm:flex-nowrap items-start justify-center gap-5">
       {/* <div className="icon">{icon}</div> */}
       <img src={icon} className='w-36' />
       <div className='space-y-5'>
@@ -140,7 +140,7 @@ const Services = () => {
     <div>
       <section className="hero-container">
         <div className="hero-content">
-          <div className="flex items-center justify-between lg:flex-nowrap flex-wrap">
+          <div className="flex items-center justify-between flex-wrap lg:flex-nowrap flex-col md:flex-row">
             <div className="hero-content3">
               <img alt="Breadcrumbs" aria-hidden="true" loading="lazy" width="24s" height="24" decoding="async" data-nimg="1" class="styles_label__fRSpJ" src="/breadcrumbs.svg" />
               <h2 className="subheading">Gapsy / Services</h2>
@@ -149,9 +149,9 @@ const Services = () => {
               Bring your dream project to life with one of our 8 comprehensive services!
             </p>
           </div>
-          <h1 className=" font-pp-formula-condensed" >Design Studio that Brings Creativity to Life!</h1>
+          <h1 className=" font-pp-formula-condensed text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-light" >Design Studio that Brings Creativity to Life!</h1>
           <div className="divider"></div> {/* Divider line */}
-          <div className="hero-content2">
+          <div className="flex justify-between md:flex-row flex-col items-center gap-4">
             <button className="hire-us-button">Hire us</button>
             <p className="description2 font-neue-montreal">
               Gapsy is a digital agency specializing in mobile and web design and development, branding and animation.Gapsy is a digital agency specializing in mobile and web design and development, branding and animation.
@@ -170,7 +170,7 @@ const Services = () => {
         >
         {services.map((service, index) => (
           <SwiperSlide>
-          <div key={index} className="flex flex-wrap lg:flex-nowrap  items-center  w-full  justify-center lg:justify-between">
+          <div key={index} className="flex flex-wrap-reverse lg:flex-nowrap flex-col-reverse lg:flex-row  items-center  w-full   justify-center lg:justify-between gap-10">
               
               <div className="basis-1/3 space-y-7">
                 <p className='font-rockSalt text-2xl' >"{service.subTitle}"</p>
@@ -185,7 +185,7 @@ const Services = () => {
 
               <div className="basis-1/2">
               {/* <img src={service.image} alt={`${service.title}`} className="service-image" /> */}
-                  <video loop autoPlay  className='h-[96vh]'>
+                  <video loop autoPlay  className='md:h-[96vh]'>
                     <source src={service.videoUrl} type='video/mp4'/>
                   </video>
               </div>
@@ -196,7 +196,7 @@ const Services = () => {
       </div>
         
       <div className="container">
-        <h1 className="header font-pp-formula-condensed font-extralight">We work with the most progressive companies from all over the world.</h1>
+        <h1 className="header font-pp-formula-condensed font-extralight text-4xl sm:text-5xl md:text-7xl lg:text-8xl">We work with the most progressive companies from all over the world.</h1>
         <div className="divider"></div> {/* Divider line */}
         <div className="">
           
@@ -232,7 +232,7 @@ const Services = () => {
         </div>
       </div>
       <div className="app-container">
-        <h1 className="header font-pp-formula-condensed font-extralight ">Do you have any questions? We tried to answer most of them!</h1>
+        <h1 className="header font-pp-formula-condensed font-extralight text-4xl sm:text-5xl md:text-7xl lg:text-8xl">Do you have any questions? We tried to answer most of them!</h1>
         <div className="faq-list">
           {faqs.map((faq, index) => (
             <FAQItem key={index} question={faq.question} answer={faq.answer} />

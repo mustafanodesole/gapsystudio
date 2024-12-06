@@ -27,8 +27,8 @@ export default function ContactForm() {
   return (
     <div className="wd-100 bg-black text-white font-sans flex flex-col sticky ">
       <div className="bg-black text-white p-8 font-sans flex flex-col justify-center">
-        <h1 className=" font-light mb-12 text-center text-9xl font-pp-formula-condensed">Let's talk business</h1>
-        <form onSubmit={handleSubmit} className="space-y-8 max-w-4xl mx-auto grid grid-cols-2 gap-8">
+        <h1 className=" font-light mb-12 text-center text-3xl sm:text-5xl md:text-7xl lg:text-9xl font-pp-formula-condensed">Let's talk business</h1>
+        <form onSubmit={handleSubmit} className="space-y-8 max-w-4xl mx-auto grid grid-col-1 md:grid-cols-2 gap-8">
           <div className="space-y-8">
             <div>
               <label htmlFor="name" className="block mb-2 text-sm">Name</label>
@@ -82,7 +82,7 @@ export default function ContactForm() {
                 required
               ></textarea>
             </div>
-            <div className="flex justify-between items-center">
+            <div className="flex flex-wrap justify-between items-center gap-5">
               <label htmlFor="file-upload" className="upload-btn flex items-center px-4 py-2  text-white rounded-full text-sm cursor-pointer">
                 <Paperclip className="w-4 h-4 mr-2" />
                 Attach file
@@ -99,7 +99,7 @@ export default function ContactForm() {
       </div>
 
       <footer className="text-sm px-7 ">
-        <div className="flex justify-between">
+        <div className="flex justify-between flex-wrap gap-5">
           <div className="space-y-1">
             <a href="#" className="transition-colors"
               style={{
@@ -112,7 +112,7 @@ export default function ContactForm() {
               +1 909 817 2580
             </a>
           </div>
-          <div className="space-y-1 ml-64 mr-auto">
+          <div className="space-y-1 lg:ml-64 lg:mr-auto">
             <a href="#" className="transition-colors"
               style={{
                 color: "inherit",
@@ -124,7 +124,7 @@ export default function ContactForm() {
               info@gapsystudio.com
             </a>
           </div>
-          <div className="flex space-x-6">
+          <div className="flex space-x-6 flex-wrap">
             {["Gapsy", "Services", "About us", "Cases", "Industries", "Blog", "Contacts"].map((item) => (
               <a key={item} href="#" className="hover:text-custompink-300 transition-colors">
                 {item}
@@ -135,7 +135,7 @@ export default function ContactForm() {
 
         <div className="divider" style={{ backgroundColor: 'gray' }}></div> {/* Divider line */}
 
-        <div className="mt-4 mb-4 flex justify-between text-center">
+        <div className="mt-4 mb-4 flex flex-wrap justify-between text-center gap-5">
           <div className="space-y-1">
             <p style={{
               color: "inherit",
@@ -151,7 +151,7 @@ export default function ContactForm() {
               onMouseLeave={(e) => (e.currentTarget.style.color = "inherit")}
             >Privacy Policy</a>
           </div>
-          <div className="al flex space-x-6">
+          <div className="al flex flex-wrap space-x-6">
             {["Facebook", "Behance", "Dribbble", "Instagram"].map((item) => (
               <a key={item} href="#" className="transition-colors"
                 style={{

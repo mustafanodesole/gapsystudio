@@ -116,7 +116,7 @@ function FAQItem({ question, answer }) {
 
 const BenefitCard = ({ icon, title, text }) => {
   return (
-    <div className="flex items-start justify-center gap-5">
+    <div className="flex flex-wrap sm:flex-nowrap items-start justify-center gap-5">
       {/* <div className="icon">{icon}</div> */}
       <img src={icon} className='w-36' />
       <div className='space-y-5'>
@@ -142,7 +142,7 @@ const teamMembers = [
 function TeamCard({ image, name, role }) {
   return (
     <div className="team-card ">
-      <img src={image} alt={`${name}`} className="team-image2" />
+      <img src={image} alt={`${name}`} className="team-image2 object-cover" />
       <div className="team-info">
         <h3 className="team-name">{name}</h3>
         <p className="team-role">{role}</p>
@@ -155,7 +155,7 @@ function TeamCard({ image, name, role }) {
 function ServiceCard({ title, description, imageUrl }) {
   return (
     <div className="team-service-card hover:bg-white group relative">
-      <img src={imageUrl} className='hidden group-hover:block absolute -top-10 left-32 rounded-lg animate-pulse' />
+      <img src={imageUrl} className='hidden group-hover:block absolute -top-10 left-32 rounded-lg animate-pulse ' />
       <div className="team-service-title">
         <h3>{title}</h3>
       </div>
@@ -201,21 +201,21 @@ const About = () => {
     <div className=''>
       <section className="hero-container">
         <div className="">
-          <div className="hero-content2 w-2/4 mx-auto">
+          <div className="flex flex-wrap justify-between items-center px-10 md:px-0 md:w-2/4 mx-auto">
             <div className="hero-content3">
               <img alt="Breadcrumbs" aria-hidden="true" loading="lazy" width="24" height="24" decoding="async" data-nimg="1" className="styles_label__fRSpJ" src="/breadcrumbs.svg" />
               <h2 className="subheading"> <a href="/" className='hover:underline duration-500'> Gapsy </a> / About</h2>
             </div>
-            <p className="description font-rockSalt text-black ">
+            <p className="sm:w-1/2 font-rockSalt text-black ">
               Any project in mind? Drop us a line.
             </p>
           </div>
-          <h1 className="main-heading font-pp-formula-condensed text-9xl w-2/3  mx-auto">Bringing People Together - Meet Our Friendly Team</h1>
+          <h1 className="main-heading font-pp-formula-condensed text-4xl sm:text-5xl md:text-7xl lg:text-9xl px-10 md:px-0 md:w-2/3  mx-auto">Bringing People Together - Meet Our Friendly Team</h1>
           <div className="divider w-2/3 mx-auto"></div> {/* Divider line */}
 
-          <div className="hero-content2 flex items-center w-2/3 mx-auto justify-between">
+          <div className="hero-content2 flex  flex-wrap items-center px-10 md:px-0 md:w-2/3 mx-auto justify-between gap-5">
             <button className="hire-btn">Our Services</button>
-            <p className="description2 font-neue-montreal">
+            <p className="sm:w-1/2  font-neue-montreal">
               Gapsy Studio is an innovative web and mobile app design studio based in Dnipro. We are a tribe of a go-getter with outstanding experience and a reputation for building and transforming ideas into a global brand. We aren’t just creative and digital design fanatics; we are caring and passionate about your business success.
             </p>
           </div>
@@ -225,7 +225,7 @@ const About = () => {
           </div>
         </div>
       </section>
-      <div className="container">
+      <div className="md:w-2/3 mx-auto px-10 md:px-0">
         <p >
           Gapsy web design Studio is a professional web design company that has been in business since 2014.
           We have a team of highly skilled and experienced web designers who are able to create custom websites
@@ -238,10 +238,10 @@ const About = () => {
           When you work with us, we can help you become one of them.
         </p>
         <img src={'/team.webp'} alt={"Team"} className="team-image" />
-        <h1 className="header font-pp-formula-condensed">Gapsy always ready to start to take risks. Here, risk-taking is not only welcomed but encouraged.</h1>
+        <h1 className="header font-pp-formula-condensed text-4xl sm:text-5xl md:text-7xl lg:text-8xl">Gapsy always ready to start to take risks. Here, risk-taking is not only welcomed but encouraged.</h1>
         <div className="hero-content2">
-          <p />
-          <p className="description4 ">
+          
+          <p className="md:w-1/2 ml-auto ">
             Because we’re independent, we do things our way. United by way of some corporate overlord,
             we can experiment with new processes and techniques to create pure, original, and exciting solutions.
             Those who work here come from different areas of expertise. One of us was a full-time professional burlesque dancer.
@@ -253,9 +253,25 @@ const About = () => {
         <div className="relative w-full overflow-hidden team-cards">
 
           <Swiper
+           breakpoints={{
+
+            300 : {
+                slidesPerView : 1
+            },
+
+            768 : {
+                slidesPerView : 1.5
+            },
+
+            1024 : {
+                slidesPerView : 2.5
+            },
+
+            
+
+        }}
             spaceBetween={25} // Spacing between slides
-            slidesPerView={3.5} // Number of slides visible
-            // Enables navigation buttons
+            
             pagination={{ clickable: true }} // Enables pagination dots
 
           >
@@ -271,12 +287,12 @@ const About = () => {
         </div>
       </section>
       <section className="team-services-section">
-        <h1 className="header">Help companies from all over the world with tailor-made solutions. With each project.</h1>
+        <h1 className=" text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-pp-formula-condensed font-light">Help companies from all over the world with tailor-made solutions. With each project.</h1>
         <div className="divider"></div> {/* Divider line */}
 
-        <div className="hero-content2 items-center">
+        <div className="flex justify-between flex-wrap items-center gap-5">
           <button className=" hire-btn">Hire us</button>
-          <p className="description2">
+          <p className="md:w-1/2">
             Keeping in mind the company's experience and desire to be continuously improved, we became experts of innovative projects in
             the design and consulting spheres. Because of applying the best international practices and home grown software that have been
             developed based on an analysis of realized projects.
@@ -292,11 +308,11 @@ const About = () => {
       </section>
 
       <div className="container">
-        <h1 className="header">We work with the most progressive companies from all over the world.</h1>
+        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl">We work with the most progressive companies from all over the world.</h1>
         <div className="divider"></div> {/* Divider line */}
         <div className="hero-content2">
           <p />
-          <p className="description4">
+          <p className="md:w-1/2 ml-auto">
             Gapsy web design Studio is a professional web design company that has been in business since 2014.
             We have a team of highly skilled and experienced web designers who are able to create custom websites
             that are both visually appealing and user-friendly. We take pride in our work, and we are confident
@@ -304,7 +320,7 @@ const About = () => {
             Gapsy web design Studio include:
           </p>
         </div>
-        <div className="grid grid-cols-2 gap-20  md:px-32 py-10 mx-auto">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-20  lg:px-32 py-10 mx-auto">
           <BenefitCard
             icon="/images/timezone-min-1.webp"
             title="Time zones are not a problem"
@@ -328,7 +344,7 @@ const About = () => {
         </div>
       </div>
       <div className="app-container">
-        <h1 className="header">Do you have any questions? We tried to answer most of them!</h1>
+        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl">Do you have any questions? We tried to answer most of them!</h1>
         <div className="faq-list">
           {faqs.map((faq, index) => (
             <FAQItem key={index} question={faq.question} answer={faq.answer} />

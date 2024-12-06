@@ -87,7 +87,7 @@ const Blogs = () => {
                             Any project in mind? <br /> Drop us a line.
                         </p>
                     </div>
-                    <h1 className="main-heading font-pp-formula-condensed text-9xl w-2/3 mx-auto">
+                    <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-pp-formula-condensed font-light  w-2/3 mx-auto">
                         Web Design Blog
                     </h1>
 
@@ -102,7 +102,7 @@ const Blogs = () => {
                 </div>
 
                 {/* Blogs */}
-                <div className="w-2/3 mx-auto grid grid-cols-2 gap-10">
+                <div className="w-2/3 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
                     {currentBlogs.map((item) => {
                         const slug = generateSlug(item.title);
                         return (
@@ -131,7 +131,7 @@ const Blogs = () => {
                 </div>
 
                 {/* Pagination */}
-                <div className="w-2/3 mx-auto flex justify-center gap-3 py-10">
+                <div className="md:w-2/3 mx-auto flex flex-wrap justify-center px-3 gap-3 py-10">
                     <button
                         className={`px-4 py-2 border rounded ${currentPage === 1
                                 ? "cursor-not-allowed bg-gray-200"

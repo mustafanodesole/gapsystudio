@@ -93,6 +93,22 @@
     padding: 40px 0;
     border-bottom: 1px solid #e0e0e0;
   }
+
+
+  @media (max-width: 768px) {
+    .team-service-card {
+      grid-template-columns: 1fr; /* Stacks items vertically */
+      padding: 20px 0; /* Adjust padding for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .team-service-card {
+      grid-template-columns: 1fr; /* Keep single column layout */
+      padding: 15px 0; /* Further reduce padding */
+    }
+  }
+
   .team-service-title {
    min-width: 50%;
   }

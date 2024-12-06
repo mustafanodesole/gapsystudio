@@ -82,11 +82,29 @@ function TestimonialCard({ text, author, title, company, image }) {
 function Testimonials() {
     return (
         <div className="-section py-20 px-10">
-            <h1 className="header app-container font-pp-formula-condensed font-extralight">Want to know what our clients think about working with us?</h1>
+            <h1 className="header app-container font-pp-formula-condensed font-extralight text-4xl sm:text-5xl md:text-7xl lg:text-8xl">Want to know what our clients think about working with us?</h1>
             <div className="">
                 <Swiper
+                breakpoints={{
+
+                    300 : {
+                        slidesPerView : 1
+                    },
+
+                    768 : {
+                        slidesPerView : 1.5
+                    },
+
+                    1024 : {
+                        slidesPerView : 2.5
+                    },
+
+                    
+
+                }}
+                    // slidesPerView={1}
                     spaceBetween={30} // Spacing between slides
-                    slidesPerView={2.5} // Number of slides visible
+                    
                     // Enables navigation buttons
                     pagination={{ clickable: true }} // Enables pagination dots
 
