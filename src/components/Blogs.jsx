@@ -73,13 +73,13 @@ const Blogs = () => {
                             />
                             <h2 className="subheading">
                                 <a href="/" className="hover:underline duration-500">
-                                    {" "}
-                                    Gapsy{" "}
-                                </a>{" "}
-                                /{" "}
+
+                                    Gapsy
+                                </a>
+                                /
                                 <a href="/blog" className="text-black">
-                                    {" "}
-                                    Blogs{" "}
+
+                                    Blogs
                                 </a>
                             </h2>
                         </div>
@@ -134,8 +134,8 @@ const Blogs = () => {
                 <div className="md:w-2/3 mx-auto flex flex-wrap justify-center px-3 gap-3 py-10">
                     <button
                         className={`px-4 py-2 border rounded ${currentPage === 1
-                                ? "cursor-not-allowed bg-gray-200"
-                                : "animate-btn"
+                            ? "cursor-not-allowed bg-gray-200"
+                            : "animate-btn"
                             }`}
                         onClick={() => handlePageChange(currentPage - 1)}
                         disabled={currentPage === 1}
@@ -146,8 +146,8 @@ const Blogs = () => {
                         <button
                             key={index}
                             className={`px-4 py-2 border rounded-lg ${currentPage === index + 1
-                                    ? "bg-black text-white"
-                                    : "animate-btn"
+                                ? "bg-black text-white"
+                                : "animate-btn"
                                 }`}
                             onClick={() => handlePageChange(index + 1)}
                         >
@@ -156,8 +156,8 @@ const Blogs = () => {
                     ))}
                     <button
                         className={`px-4 py-2 border rounded ${currentPage === totalPages
-                                ? "cursor-not-allowed bg-gray-200"
-                                : "animate-btn"
+                            ? "cursor-not-allowed bg-gray-200"
+                            : "animate-btn"
                             }`}
                         onClick={() => handlePageChange(currentPage + 1)}
                         disabled={currentPage === totalPages}
