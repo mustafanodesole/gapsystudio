@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { blogs } from '../utility/blogsData';
 import FAQItem from './FAQItem';
-// Helper function to transform slug
+
 const formatSlug = (slug) => {
   return slug
     .split('-') // Split by dashes
@@ -17,6 +17,14 @@ const getBreadcrumbSlug = (slug) => {
     .slice(0, 3) // Get the first three words
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize each word
     .join(' '); // Join with spaces
+};
+
+const generateSlug = (title) => {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
+    .replace(/\s+/g, '-') // Replace spaces with hyphens
+    .trim();
 };
 
 const faqs = [
@@ -56,7 +64,7 @@ const BlogPage = () => {
     <main>
       <section className="my-10 py-10">
         <div className="px-5 md:px-0">
-          <div className=" md:w-2/3 ">
+          <div className=" lg:w-2/3 ">
             <div className="hero-content3 py-3">
               <img
                 alt="Breadcrumbs"
@@ -78,12 +86,12 @@ const BlogPage = () => {
               </h2>
             </div>
           </div>
-          <h1 className="main-heading font-pp-formula-condensed text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl md:w-2/3 px-20 mx-auto">
+          <h1 className=" font-pp-formula-condensed text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl md:w-2/3 mx-auto font-light">
             {formattedTitle}
           </h1>
-          {filterhashTags.map((hashtag) => <>
+          {/* {filterhashTags.map((hashtag) => <>
             <button className='animate-btn'>{hashtag}</button>
-          </>)}
+          </>)} */}
           <div className="divider lg:w-2/3 mx-auto"></div> {/* Divider line */}
         </div>
       </section>
@@ -91,9 +99,9 @@ const BlogPage = () => {
 
       <img className='lg:w-2/3 mx-auto' src='/images/blogs/article-elit-web-user-experience-design-services-cover.jpg' />
       <section className='flex md:w-2/3 mx-auto px-5 md:px-0'>
-        <section className='md:basis-3/4 pr-10 my-10 md:border-r-2 md:border-gray-400 space-y-10'>
+        <section className='md:basis-3/4 pr-10 my-10 md:border-r-2 md:border-gray-400 space-y-10 overflow-hidden'>
 
-          <p>Ever stumbled upon a website that somehow trapped you into buying something you didn’t want, or worse, signing up for a subscription you didn’t even notice? Welcome to the shadowy world of dark patterns UX—strategies deliberately designed to trick users into doing things they might not want to do. </p>
+          <p className=''>Ever stumbled upon a website that somehow trapped you into buying something you didn't want, or worse, signing up for a subscription you didn’t even notice? Welcome to the shadowy world of dark patterns UX—strategies deliberately designed to trick users into doing things they might not want to do. </p>
           <p>While UX design usually focuses on improving user experiences, dark UX practices have a more sinister intent. So, what is a dark pattern? Gapsy pulls back the curtain and reveals the tricks some platforms use, how they work, and what you should watch for.</p>
 
           <div id='how-do-dark-patterns-work' className='space-y-10'>
@@ -156,11 +164,6 @@ const BlogPage = () => {
             </div>
           </div>
 
-          <div>
-
-
-          </div>
-
         </section>
 
 
@@ -175,12 +178,10 @@ const BlogPage = () => {
           <a href="#" className='hover:underline'>Conclusion</a>
           <img src="/images/blogs/banner1-mobile.png" alt="" />
         </section>
-
-
-
-
-
       </section>
+
+
+      {/* FAQS */}
 
       <div className="lg:w-2/3 px-5 py-10  mx-auto">
         <hr />
@@ -189,12 +190,43 @@ const BlogPage = () => {
           {faqs.map((faq, index) => (
             <>
               <FAQItem key={index} question={faq.question} answer={faq.answer} />
-              
             </>
           ))}
         </div>
       </div>
 
+
+          {/* Related Articles */}
+      <div>
+        <h4 className='lg:w-2/3 text-4xl md:text-6xl mx-auto font-neue-montreal px-5'>Related Articles</h4>
+        <div className="lg:w-2/3 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 py-10 px-5">
+          {blogs.filter((blog, i) => i < 2).map((item) => {
+            const slug = generateSlug(item.title);
+            return (
+              <a href={`/blog/${slug}`} key={item.title}>
+                <div className="space-y-1">
+                  <img
+                    src={item.image}
+                    className="object-contain hover:scale-105 duration-500 hover:rotate-1 rounded-xl"
+                    alt={item.title}
+                  />
+                  <p className="text-sm">{item.date}</p>
+                  <h5 className="font-pp-formula-condensed font-light text-black text-2xl">
+                    {item.title}
+                  </h5>
+                  <div className="text-black flex gap-2">
+                    {item.hashtags.map((tag, index) => (
+                      <p key={index} className="text-black text-md">
+                        #{tag}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </div>
 
     </main>
   );
