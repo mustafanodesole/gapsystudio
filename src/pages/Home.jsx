@@ -9,7 +9,7 @@ import Header from '../components/Header';
 import { motion } from 'framer-motion';
 import { IoIosArrowForward } from "react-icons/io";
 import { ImAttachment } from "react-icons/im";
-
+import FloatingChatButton from '../components/FloatingChatButton';
 
 const HomePage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -430,6 +430,7 @@ const HomePage = () => {
           <section className='w-screen h-screen'></section>
         </HorizontalScroll>
       </main>
+      <FloatingChatButton />
       <Footer />
     </ErrorBoundary>
   );
