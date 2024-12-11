@@ -14,7 +14,19 @@ export default {
         'pp-formula-condensed': ['PP Formula Condensed', 'sans-serif'],
         'neue-montreal' : ['Neue Montreal']
 
-      }
+      },
+
+      animation: {
+        "spin-custom": "spin-custom 3s linear infinite", // Define custom spin animation
+      },
+
+      keyframes: {
+        "spin-custom": {
+          "0%": { transform: "rotateY(0deg)" },
+          "100%": { transform: "rotateY(360deg)" },
+        },
+      },
+
     },
   },
   

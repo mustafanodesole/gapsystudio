@@ -6,6 +6,7 @@ import Navigation from '../components/Navigation';
 import HorizontalScroll from '../components/HorizontalScroll';
 import ErrorBoundary from '../components/ErrorBoundary';
 import Header from '../components/Header';
+import Modal from '../components/Modal';
 import { motion } from 'framer-motion';
 import { IoIosArrowForward } from "react-icons/io";
 import { ImAttachment } from "react-icons/im";
@@ -29,6 +30,7 @@ const HomePage = () => {
         <Background />
         {/* <Background2 /> */}
         <Header />
+
         <HorizontalScroll>
           {/* Hero Section */}
           <section className="section  w-screen h-screen flex items-center  px-20 ">
@@ -59,7 +61,16 @@ const HomePage = () => {
                   We create immersive digital experiences that inspire and innovate
                 </p> */}
             </motion.div>
+            <div className="flex items-center justify-center h-screen">
+              <img
+                src="/images/120_.webp"
+                alt="Rotating"
+                className="w-[200px] h-[200px] object-contain animate-spin-custom"
+              />
+            </div>
           </section>
+
+        
 
           {/* Who we are */}
           <section className="ml-80 section w-screen h-screen flex items-center justify-center  px-20">
@@ -104,6 +115,7 @@ const HomePage = () => {
 
 
           <section className=" section w-screen h-screen flex items-center justify-center  px-20  lg:hidden">
+
 
             <motion.div
               initial={{ opacity: 0 }}
@@ -387,8 +399,7 @@ const HomePage = () => {
                   <span>View More</span>
                 </div>
               </motion.div>
-
-
+              
             </div>
           </section>
 
@@ -400,9 +411,9 @@ const HomePage = () => {
               whileInView={{ opacity: 1 }}
               className="w-full flex items-center"
             >
-            <h2 className="text-4xl md:text-8xl font-bold mb-8 uppercase text-nowrap text-[#fe6f61]  ">Get In Touch</h2>
+              <h2 className="text-4xl md:text-8xl font-bold mb-8 uppercase text-nowrap text-[#fe6f61]  ">Get In Touch</h2>
 
-              <form className="space-y-6 ml-32 w-screen ">
+              <form className="space-y-6 ml-32 w-[30vw] ">
                 <motion.div>
                   <input
                     required
@@ -442,7 +453,6 @@ const HomePage = () => {
             </motion.div>
           </section>
 
-          <section className='w-screen h-screen'></section>
         </HorizontalScroll>
       </main>
       <FloatingChatButton />
