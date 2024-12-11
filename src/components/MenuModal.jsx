@@ -6,7 +6,7 @@ const MenuModal = ({ onClose }) => {
     const location = useLocation(); 
 
     return (
-        <div className="styles_menu__kfJsA styles_show__1mXK9">
+        <div className="styles_menu__kfJsA styles_show__1mXK9 px-10">
             <div className="styles_menu_background__d7f6c" style={{ width: "2314.79px", height: "2314.79px" }}>
                 <div style={{ opacity: 1, transform: "scale(1)" }}></div>
             </div>

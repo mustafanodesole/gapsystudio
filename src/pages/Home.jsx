@@ -63,7 +63,7 @@ const HomePage = () => {
 
           {/* Who we are */}
           <section className="ml-80 section w-screen h-screen flex items-center justify-center  px-20">
-            <div className="grid grid-cols-2 gap-80">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-80">
               <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -93,17 +93,32 @@ const HomePage = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 1 }}
-                className=""
+                className="hidden lg:block"
               >
-                <video autoplay loop>
+                <video autoPlay loop controls>
                   <source src='/videos/showreel.mp4' />
                 </video>
               </motion.div>
             </div>
+          </section >
+
+
+          <section className=" section w-screen h-screen flex items-center justify-center  px-20  lg:hidden">
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+              className=""
+            >
+              <video autoPlay loop controls>
+                <source src='/videos/showreel.mp4' />
+              </video>
+            </motion.div>
           </section>
 
           {/* selected works*/}
-          <section className="section w-screen h-screen flex items-center justify-center  text-center md:px-10">
+          <section className="section w-screen h-screen flex items-center justify-center  text-center px-10">
             <div className=" relative">
               <motion.div
                 initial={{ opacity: 0 }}
@@ -137,7 +152,7 @@ const HomePage = () => {
                       The service helps create Shopify stores, promote products with the helo of creators who record video ads for soceila networks
                     </p>
                     <div className='flex flex-nowrap items-center gap-2'>
-                      <button className=" text-black border-4 border-black rounded-lg  p-2 text-xl hover:bg-black hover:text-white duration-300 hover:transition-all">
+                      <button className="animate-btn">
                         <IoIosArrowForward />
                       </button>
                       <span>View Course</span>
@@ -164,7 +179,7 @@ const HomePage = () => {
                       The product KOP (Keep On Playing) is a Play to Earn (P2E) platform that rewards users for playing games and completing challenges/quest
                     </p>
                     <div className='flex flex-nowrap items-center gap-2'>
-                      <button className=" text-black border-4 border-black rounded-lg  p-2 text-xl hover:bg-black hover:text-white duration-300 hover:transition-all">
+                      <button className="animate-btn">
                         <IoIosArrowForward />
                       </button>
                       <span>View Course</span>
@@ -191,7 +206,7 @@ const HomePage = () => {
                       An innovative project that streamlines the process of solar operations by utilizing industry-leading technologies and software.
                     </p>
                     <div className='flex flex-nowrap items-center gap-2'>
-                      <button className=" text-black border-4 border-black rounded-lg  p-2 text-xl hover:bg-black hover:text-white duration-300 hover:transition-all">
+                      <button className=" animate-btn">
                         <IoIosArrowForward />
                       </button>
                       <span>View Course</span>
@@ -219,7 +234,7 @@ const HomePage = () => {
                       All-in-one social application that allows you to assign events, sync, them to calendars, that chat with friends and leave feedback
                     </p>
                     <div className='flex flex-nowrap items-center gap-2'>
-                      <button className=" text-black border-4 border-black rounded-lg  p-2 text-xl hover:bg-black hover:text-white duration-300 hover:transition-all">
+                      <button className="animate-btn">
                         <IoIosArrowForward />
                       </button>
                       <span>View Course</span>
@@ -319,7 +334,7 @@ const HomePage = () => {
 
                 <h3 className="text-5xl  font-pp-formula-condensed">Branding Design</h3>
                 <p className="text-gray-400 text-xl pr-5">
-                    If you are looking for branding design services, look no further than Gapsy Studio. We can help you create a unique and memorable brand that will standout fromt the competetion.
+                  If you are looking for branding design services, look no further than Gapsy Studio. We can help you create a unique and memorable brand that will standout fromt the competetion.
                 </p>
                 <div className='flex flex-nowrap items-center gap-2'>
                   <button className=" animate-btn">
@@ -373,21 +388,21 @@ const HomePage = () => {
                 </div>
               </motion.div>
 
-             
+
             </div>
           </section>
 
 
-
           {/* Contact Section */}
-          <section className="section w-screen h-screen flex items-center px-20">
+          <section className="section w-screen h-screen flex  items-center px-20">
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               className="w-full flex items-center"
             >
-              <h2 className="text-8xl font-bold mb-8 uppercase text-nowrap text-[#fe6f61]  ">Get In Touch</h2>
-              <form className="space-y-6 ml-32 lg:w-1/4">
+            <h2 className="text-4xl md:text-8xl font-bold mb-8 uppercase text-nowrap text-[#fe6f61]  ">Get In Touch</h2>
+
+              <form className="space-y-6 ml-32 w-screen ">
                 <motion.div>
                   <input
                     required
