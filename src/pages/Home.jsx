@@ -13,6 +13,7 @@ import { ImAttachment } from "react-icons/im";
 import FloatingChatButton from '../components/FloatingChatButton';
 import TextThreeD from '../components/TextThreeD';
 import ContactModal from '../components/ContactModal';
+import ModelViewer from '../components/ModelViewer';
 
 const HomePage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -125,13 +126,15 @@ const HomePage = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 1 }}
-              className=""
+              className="flex items-center justify-center"
             >
               <video autoPlay loop controls>
                 <source src='/videos/showreel.mp4' />
               </video>
             </motion.div>
           </section>
+
+
 
           {/* selected works*/}
           <section className="section w-screen h-screen flex items-center justify-center  text-center px-10">
@@ -150,6 +153,10 @@ const HomePage = () => {
             </div>
           </section>
 
+          {/* <section className='section'>
+
+            <ModelViewer />
+          </section> */}
 
           {/* projects */}
           <section className="section w-screen h-screen flex items-center justify-center ">
@@ -420,7 +427,7 @@ const HomePage = () => {
                 <h2 className="text-4xl md:text-8xl font-bold mb-8 uppercase text-nowrap text-[#fe6f61]  ">Get In Touch</h2>
                 <span className='block lg:hidden'>
 
-                <ContactModal />
+                  <ContactModal />
                 </span>
               </div>
 
