@@ -38,8 +38,9 @@ export default function ContactModal() {
                 aria-labelledby="modal-title"
                 aria-describedby="modal-description"
             >
-                <Box sx={{ ...style, width: '90%', textAlign: 'center' }}>
-                    <div className='flex flex-col items-center justify-between gap-5 p-10'>
+                <Box sx={{ ...style, width: '90%' }}>
+                    <Button sx={{color : "black" , backgroundColor : 'white' , px : '10px' , borderRadius : "5px" , ml : 'auto' , display : 'block'}} onClick={handleClose}>Close</Button>
+                    <div className='flex flex-col items-center justify-between gap-5 p-10 text-center'>
 
                         <h2 id="modal-title" className='text-7xl text-white font-pp-formula-condensed'>Get Free Consulation</h2>
                         <p id="modal-description" className='text-white font-neue-montreal'>
