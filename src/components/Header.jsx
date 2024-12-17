@@ -9,7 +9,9 @@ const Header = () => {
 
     return (
         <header style={headerStyles}>
+            <a href="/">
             <img src="/images/logo.svg" alt="Gapsy Logo" style={logoStyles} />
+            </a>
            
             <div style={buttonContainer}>
                 <button className='hire-btn' onClick={() => setIsMenuOpen(true)}> <TiThMenu className='text-xl'/> </button>
@@ -34,7 +36,8 @@ const headerStyles = {
 const logoStyles = {
     position : "fixed",
     top : 20,
-    left : 20
+    left : 20,
+    zIndex : 2
 };
 
 const buttonContainer = {

@@ -11,6 +11,8 @@ import { motion } from 'framer-motion';
 import { IoIosArrowForward } from "react-icons/io";
 import { ImAttachment } from "react-icons/im";
 import FloatingChatButton from '../components/FloatingChatButton';
+import TextThreeD from '../components/TextThreeD';
+import ContactModal from '../components/ContactModal';
 
 const HomePage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -32,6 +34,8 @@ const HomePage = () => {
         <Header />
 
         <HorizontalScroll>
+
+
           {/* Hero Section */}
           <section className="section  w-screen h-screen flex items-center  px-20 ">
             <motion.div
@@ -61,16 +65,16 @@ const HomePage = () => {
                   We create immersive digital experiences that inspire and innovate
                 </p> */}
             </motion.div>
-            <div className="flex items-center justify-center h-screen">
+            <div className="hidden lg:flex items-center justify-center ">
               <img
                 src="/images/120_.webp"
                 alt="Rotating"
-                className="w-[200px] h-[200px] object-contain animate-spin-custom"
+                className="w-[300px] h-[300px] object-contain animate-spin-custom"
               />
             </div>
           </section>
 
-        
+
 
           {/* Who we are */}
           <section className="ml-80 section w-screen h-screen flex items-center justify-center  px-20">
@@ -139,7 +143,7 @@ const HomePage = () => {
                 className="space-y-8"
               >
                 <img src='/images/wow.svg' className="absolute right-0 -top-24" />
-                <h2 className="text-9xl text-nowrap  font-bold  text-[#fe6f61]">Selected Works</h2>
+                <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl text-nowrap  font-bold  text-[#fe6f61]">Selected Works</h2>
 
               </motion.div>
 
@@ -259,8 +263,8 @@ const HomePage = () => {
 
 
           {/* Services Section */}
-          <section className="section w-screen h-screen flex items-center  ">
-            <div className=" flex gap-20">
+          <section className="section w-screen h-screen flex items-center  justify-center">
+            <div className=" flex items-center justify-center gap-20">
               <motion.h2
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -399,7 +403,7 @@ const HomePage = () => {
                   <span>View More</span>
                 </div>
               </motion.div>
-              
+
             </div>
           </section>
 
@@ -411,9 +415,16 @@ const HomePage = () => {
               whileInView={{ opacity: 1 }}
               className="w-full flex items-center"
             >
-              <h2 className="text-4xl md:text-8xl font-bold mb-8 uppercase text-nowrap text-[#fe6f61]  ">Get In Touch</h2>
+              <div className='flex flex-col'>
 
-              <form className="space-y-6 ml-32 w-[30vw] ">
+                <h2 className="text-4xl md:text-8xl font-bold mb-8 uppercase text-nowrap text-[#fe6f61]  ">Get In Touch</h2>
+                <span className='block lg:hidden'>
+
+                <ContactModal />
+                </span>
+              </div>
+
+              <form className="space-y-6 ml-32 md:w-[33vw] hidden lg:block">
                 <motion.div>
                   <input
                     required

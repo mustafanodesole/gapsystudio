@@ -1,5 +1,5 @@
 
-import { useEffect, useRef } from 'react';
+import React , { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -37,8 +37,8 @@ export default function HorizontalScroll({ children }: { children: React.ReactNo
     <div ref={containerRef} className="h-screen overflow-hidden">
       <div
         ref={scrollRef}
-        className="flex items-center  h-full w-[3500vw] sm:w-[3000vw] md:w-[2600vw] lg:w-[2000vw]"
-       // style={{ width: `${100 * React.Children.count(children)}vw` }}
+        className="flex items-center  h-full "
+       style={{ width: `${100 * React.Children.count(children)}vw` }}
       >
         {children}
       </div>

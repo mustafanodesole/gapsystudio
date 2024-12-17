@@ -7,6 +7,8 @@ import { IoIosArrowForward } from "react-icons/io";
 import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
+import { useNavigate } from "react-router-dom";
+import { generateSlug } from './Blogs';
 
 const services = [
   {
@@ -136,6 +138,7 @@ const BenefitCard = ({ icon, title, text }) => {
   );
 };
 const Services = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <section className="hero-container">
@@ -143,7 +146,7 @@ const Services = () => {
           <div className="flex items-center justify-between flex-wrap lg:flex-nowrap flex-col md:flex-row">
             <div className="hero-content3 hidden lg:flex items-center">
               <img alt="Breadcrumbs" aria-hidden="true" loading="lazy" width="24s" height="24" decoding="async" data-nimg="1" class="styles_label__fRSpJ" src="/breadcrumbs.svg" />
-              <h2 className="subheading">Gapsy / Services</h2>
+              <h2 className="subheading"> <a href="/"> Gapsy </a> / <span className='text-black'> Services </span></h2>
             </div>
             <p className="lg:w-1/2 font-rockSalt" >
               Bring your dream project to life with one of our 8 comprehensive services!
@@ -168,8 +171,10 @@ const Services = () => {
            // Enables navigation buttons
            pagination={{ clickable: true }} // Enables pagination dots
         >
-        {services.map((service, index) => (
-          <SwiperSlide>
+        {services.map((service, index) => {
+
+          const slug = generateSlug(service.title)
+         return  <SwiperSlide>
           <div key={index} className="flex flex-wrap-reverse lg:flex-nowrap flex-col-reverse lg:flex-row  items-center  w-full   justify-center lg:justify-between gap-10">
               
               <div className="basis-1/3 space-y-7">
@@ -177,7 +182,7 @@ const Services = () => {
                 <h2 className='text-6xl font-light font-pp-formula-condensed' style={{ fontSize: 'clamp(1.5rem, 1.0602rem + 2.3457vw, 3.875rem)' }}>{service.title}</h2>
                 <p className='font-neue-montreal'>{service.description}</p>
                 <span className='flex items-center  gap-2'>
-                  <button className='animate-btn'><IoIosArrowForward />
+                  <button  onClick={() => navigate(`/services/${slug}`)} className='animate-btn'><IoIosArrowForward />
                   </button>
                     <p className="text-black">View More</p>
                 </span>
@@ -191,7 +196,7 @@ const Services = () => {
               </div>
           </div>
           </SwiperSlide>
-        ))}
+          })}
         </Swiper>
       </div>
         

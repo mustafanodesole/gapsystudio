@@ -31,7 +31,7 @@ const buttons = [
     { title: "Webflow" },
     { title: "Agile" },
 ];
-const generateSlug = (title) => {
+export const generateSlug = (title) => {
     return title
         .toLowerCase()
         .replace(/[^a-z0-9\s-]/g, '') // Remove special characters

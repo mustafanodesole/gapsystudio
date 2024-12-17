@@ -12,6 +12,8 @@ import Blogs from '../components/Blogs';
 import BlogPage from '../components/BlogPage';
 import IndustryPage from '../components/IndustryPage';
 import ContactForm from '../components/ContactForm';
+import ServicePage from '../components/ServicePage';
+import FloatingChatButton from '../components/FloatingChatButton';
 const AppRouter = () => {
     return (
         <Router>
@@ -29,6 +31,7 @@ const AppRouter = () => {
                                 <Routes>
                                     <Route path="/about" element={<Team />} />
                                     <Route path="/services" element={<Services />} />
+                                    <Route path="/services/:slug" element={<ServicePage />} />
                                     <Route path="/contacts" element={<ContactPage />} />
                                     <Route path="/herosections" element={<HeroSection />} />
                                     <Route path="/industries" element={<Industries />} />
@@ -38,6 +41,7 @@ const AppRouter = () => {
                                     {/* Add more routes here */}
                                 </Routes>
                                 <ContactForm />
+                                <FloatingChatButton />
                             </>
                         }
                     />

@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { blogs } from '../utility/blogsData';
 import FAQItem from './FAQItem';
+import { generateSlug } from './Blogs';
 
-const formatSlug = (slug) => {
+export const formatSlug = (slug) => {
   return slug
     .split('-') // Split by dashes
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize each word
@@ -11,7 +12,7 @@ const formatSlug = (slug) => {
 };
 
 
-const getBreadcrumbSlug = (slug) => {
+export const getBreadcrumbSlug = (slug) => {
   return slug
     .split('-') // Split by dashes
     .slice(0, 3) // Get the first three words
@@ -19,13 +20,13 @@ const getBreadcrumbSlug = (slug) => {
     .join(' '); // Join with spaces
 };
 
-const generateSlug = (title) => {
-  return title
-    .toLowerCase()
-    .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
-    .replace(/\s+/g, '-') // Replace spaces with hyphens
-    .trim();
-};
+// const generateSlug = (title) => {
+//   return title
+//     .toLowerCase()
+//     .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
+//     .replace(/\s+/g, '-') // Replace spaces with hyphens
+//     .trim();
+// };
 
 const faqs = [
   {
